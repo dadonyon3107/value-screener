@@ -645,9 +645,9 @@
     "roe": 17.91,
     "margin": 23.34,
     "de": 1.89,
-    "roa": 5.55,
+    "roa": 6.01,
     "cr": 1.49,
-    "roc": 14.83
+    "roc": 21.48
    },
    "value": 11,
    "quality": 30,
@@ -893,9 +893,9 @@
     "roe": 17.91,
     "margin": 23.34,
     "de": 1.89,
-    "roa": 5.55,
+    "roa": 6.01,
     "cr": 1.49,
-    "roc": 14.83
+    "roc": 21.48
    },
    "value": 0,
    "quality": 32,
@@ -955,9 +955,9 @@
     "roe": 17.91,
     "margin": 23.34,
     "de": 1.89,
-    "roa": 5.55,
+    "roa": 6.01,
     "cr": 1.49,
-    "roc": 14.83
+    "roc": 21.48
    },
    "value": 32,
    "quality": 40,
@@ -1513,9 +1513,9 @@
     "roe": 9.21,
     "margin": 14.03,
     "de": 2.28,
-    "roa": 2.62,
-    "cr": 0.71,
-    "roc": 2.31
+    "roa": 2.28,
+    "cr": 0.78,
+    "roc": 2.24
    },
    "value": 21,
    "quality": 45,
@@ -1823,9 +1823,9 @@
     "roe": 9.21,
     "margin": 14.03,
     "de": 2.28,
-    "roa": 2.62,
-    "cr": 0.71,
-    "roc": 2.31
+    "roa": 2.28,
+    "cr": 0.78,
+    "roc": 2.24
    },
    "value": 29,
    "quality": 5,
@@ -2091,8 +2091,8 @@
    "ps": 1.06628,
    "pb": 13.03239,
    "de": 25.6013,
-   "cr": 0.7898567130429113,
-   "roa": -4.64,
+   "cr": 0.79163,
+   "roa": 44.61,
    "roe": -183.16,
    "margin": -14.99,
    "ind": {
@@ -2102,9 +2102,9 @@
     "roe": 17.91,
     "margin": 23.34,
     "de": 1.89,
-    "roa": 5.55,
+    "roa": 6.01,
     "cr": 1.49,
-    "roc": 14.83
+    "roc": 21.48
    },
    "value": 25,
    "quality": 0,
@@ -2133,9 +2133,9 @@
     "roe": 17.91,
     "margin": 23.34,
     "de": 1.89,
-    "roa": 5.55,
+    "roa": 6.01,
     "cr": 1.49,
-    "roc": 14.83
+    "roc": 21.48
    },
    "value": 28,
    "quality": 34,
@@ -2153,8 +2153,8 @@
    "ps": null,
    "pb": null,
    "de": null,
-   "cr": null,
-   "roa": null,
+   "cr": 1.11,
+   "roa": 0.93,
    "roe": null,
    "margin": null,
    "ind": {
@@ -2164,9 +2164,9 @@
     "roe": 9.21,
     "margin": 14.03,
     "de": 2.28,
-    "roa": 2.62,
-    "cr": 0.71,
-    "roc": 2.31
+    "roa": 2.28,
+    "cr": 0.78,
+    "roc": 2.24
    },
    "value": null,
    "quality": null,
@@ -2257,9 +2257,9 @@
     "roe": 17.91,
     "margin": 23.34,
     "de": 1.89,
-    "roa": 5.55,
+    "roa": 6.01,
     "cr": 1.49,
-    "roc": 14.83
+    "roc": 21.48
    },
    "value": 18,
    "quality": 44,
@@ -2319,9 +2319,9 @@
     "roe": 9.21,
     "margin": 14.03,
     "de": 2.28,
-    "roa": 2.62,
-    "cr": 0.71,
-    "roc": 2.31
+    "roa": 2.28,
+    "cr": 0.78,
+    "roc": 2.24
    },
    "value": 10,
    "quality": 5,
@@ -2474,9 +2474,9 @@
     "roe": 9.21,
     "margin": 14.03,
     "de": 2.28,
-    "roa": 2.62,
-    "cr": 0.71,
-    "roc": 2.31
+    "roa": 2.28,
+    "cr": 0.78,
+    "roc": 2.24
    },
    "value": 24,
    "quality": 35,
@@ -2970,9 +2970,9 @@
     "roe": 17.91,
     "margin": 23.34,
     "de": 1.89,
-    "roa": 5.55,
+    "roa": 6.01,
     "cr": 1.49,
-    "roc": 14.83
+    "roc": 21.48
    },
    "value": 50,
    "quality": 13,
@@ -3219,8 +3219,8 @@
     "margin": 2353.26,
     "de": 0.7,
     "roa": 7.46,
-    "cr": 6.08,
-    "roc": 11.79
+    "cr": 5.75,
+    "roc": 13.55
    },
    "value": 24,
    "quality": 40,
@@ -3435,9 +3435,9 @@
     "roe": 9.21,
     "margin": 14.03,
     "de": 2.28,
-    "roa": 2.62,
-    "cr": 0.71,
-    "roc": 2.31
+    "roa": 2.28,
+    "cr": 0.78,
+    "roc": 2.24
    },
    "value": 31,
    "quality": 41,
@@ -3498,8 +3498,8 @@
     "margin": 2353.26,
     "de": 0.7,
     "roa": 7.46,
-    "cr": 6.08,
-    "roc": 11.79
+    "cr": 5.75,
+    "roc": 13.55
    },
    "value": 38,
    "quality": 13,
@@ -3745,9 +3745,9 @@
     "roe": 9.21,
     "margin": 14.03,
     "de": 2.28,
-    "roa": 2.62,
-    "cr": 0.71,
-    "roc": 2.31
+    "roa": 2.28,
+    "cr": 0.78,
+    "roc": 2.24
    },
    "value": 37,
    "quality": 39,
@@ -3827,7 +3827,7 @@
    "ps": null,
    "pb": null,
    "de": null,
-   "cr": null,
+   "cr": 5.09,
    "roa": null,
    "roe": null,
    "margin": null,
@@ -3839,8 +3839,8 @@
     "margin": 2353.26,
     "de": 0.7,
     "roa": 7.46,
-    "cr": 6.08,
-    "roc": 11.79
+    "cr": 5.75,
+    "roc": 13.55
    },
    "value": 0,
    "quality": null,
@@ -3869,9 +3869,9 @@
     "roe": 9.21,
     "margin": 14.03,
     "de": 2.28,
-    "roa": 2.62,
-    "cr": 0.71,
-    "roc": 2.31
+    "roa": 2.28,
+    "cr": 0.78,
+    "roc": 2.24
    },
    "value": 17,
    "quality": 7,
@@ -3901,8 +3901,8 @@
     "margin": 4.38,
     "de": 0.6,
     "roa": 9.33,
-    "cr": 1.19,
-    "roc": 24.1
+    "cr": 0.97,
+    "roc": 25.93
    },
    "value": 25,
    "quality": 27,
@@ -3931,9 +3931,9 @@
     "roe": 17.91,
     "margin": 23.34,
     "de": 1.89,
-    "roa": 5.55,
+    "roa": 6.01,
     "cr": 1.49,
-    "roc": 14.83
+    "roc": 21.48
    },
    "value": 33,
    "quality": 16,
@@ -4137,7 +4137,7 @@
    "ps": null,
    "pb": null,
    "de": null,
-   "cr": null,
+   "cr": 0.75,
    "roa": null,
    "roe": null,
    "margin": null,
@@ -4149,8 +4149,8 @@
     "margin": 4.38,
     "de": 0.6,
     "roa": 9.33,
-    "cr": 1.19,
-    "roc": 24.1
+    "cr": 0.97,
+    "roc": 25.93
    },
    "value": null,
    "quality": null,
@@ -4179,9 +4179,9 @@
     "roe": 17.91,
     "margin": 23.34,
     "de": 1.89,
-    "roa": 5.55,
+    "roa": 6.01,
     "cr": 1.49,
-    "roc": 14.83
+    "roc": 21.48
    },
    "value": 49,
    "quality": 17,
@@ -88459,37 +88459,244 @@
    ]
   },
   "TLV:ENOG": {
-   "fx": null,
-   "hist": null,
-   "rev": null,
-   "fcfV": null,
-   "eps": null,
-   "shares": null,
+   "rev": 1.73,
+   "cr": 0.79163,
+   "eps": -1.4,
+   "shares": 184.0,
+   "ltdWC": false,
    "ltdWCr": null,
-   "cr": null,
-   "ltdWC": null,
    "epsPos10": null,
-   "divYears": null,
+   "divYears": 3,
    "g10": null,
-   "pe3": null,
-   "netNet": null,
+   "pe3": 13.8,
+   "netNet": false,
    "epsPred": null,
-   "roe10": null,
-   "roc": null,
+   "roe10": -197,
+   "roc": 73,
    "ltdY": null,
-   "fcf": null,
-   "fcfG": null,
-   "ret1": null,
+   "fcf": true,
+   "fcfV": 0.39,
+   "fcfG": true,
+   "ret1": true,
    "projR": null,
-   "ptm": null,
+   "ptm": -1.6,
    "g": null,
-   "y": null,
+   "y": 0.16,
    "payout": null,
-   "salesG": null,
-   "revG": null,
-   "m3": null,
+   "salesG": 162,
+   "revG": 34,
+   "m3": 7.2,
    "ptr": null,
-   "p9": null
+   "fx": 1.0,
+   "hist": {
+    "years": [
+     2014,
+     2015,
+     2016,
+     2017,
+     2018,
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025
+    ],
+    "pe": [
+     null,
+     null,
+     null,
+     null,
+     10.1299,
+     null,
+     null,
+     null,
+     158.428,
+     12.789,
+     12.9582,
+     null
+    ],
+    "ps": [
+     null,
+     null,
+     null,
+     null,
+     11.7228,
+     26.8734,
+     62.3312,
+     4.12339,
+     3.82445,
+     2.42561,
+     1.82471,
+     1.26822
+    ],
+    "pb": [
+     null,
+     null,
+     null,
+     null,
+     1.27921,
+     2.03354,
+     1.88143,
+     2.85761,
+     4.3355,
+     3.45926,
+     3.75969,
+     15.4753
+    ],
+    "roe": [
+     -23.43,
+     -84.32,
+     -1940.64,
+     7.29,
+     14.65,
+     -7.13,
+     -7.56,
+     -10.06,
+     2.53,
+     15.28,
+     17.51,
+     -66.07
+    ],
+    "roa": [
+     22.34,
+     -3.96,
+     -2.84,
+     -1.5,
+     2.51,
+     -3.52,
+     -3.07,
+     0.73,
+     0.68,
+     6.8,
+     6.74,
+     44.61
+    ],
+    "roc": [
+     28.06,
+     -4.88,
+     -3.69,
+     -1.99,
+     4.09,
+     -5.32,
+     -4.78,
+     1.27,
+     1.21,
+     11.51,
+     10.83,
+     71.09
+    ],
+    "cr": [
+     1.55118,
+     0.887355,
+     0.881503,
+     1.62109,
+     0.680923,
+     2.04131,
+     0.402817,
+     2.51365,
+     1.01159,
+     0.947591,
+     1.30778,
+     0.79163
+    ],
+    "de": [
+     1.98783,
+     9.32395,
+     -15.8262,
+     0.272789,
+     0.132623,
+     0.696356,
+     0.276368,
+     4.10965,
+     4.57606,
+     4.57824,
+     4.92393,
+     23.6951
+    ],
+    "margin": [
+     null,
+     -32.91,
+     -117.77,
+     -97.19,
+     17.22,
+     111.61,
+     -110.58,
+     -331.47,
+     -19.35,
+     2.34,
+     10.43,
+     8.82
+    ],
+    "eps": [
+     null,
+     null,
+     null,
+     null,
+     0.14,
+     0.79,
+     -0.5,
+     -0.52,
+     -0.54,
+     0.1,
+     1.04,
+     1.01
+    ],
+    "shares": [
+     null,
+     null,
+     null,
+     null,
+     71.0,
+     133.0,
+     165.0,
+     177.0,
+     177.0,
+     185.0,
+     180.0,
+     186.0
+    ],
+    "fcfV": [
+     null,
+     -0.02,
+     -0.05,
+     -0.05,
+     -0.02,
+     -0.23,
+     -0.86,
+     -0.4,
+     -0.27,
+     -0.12,
+     0.22,
+     0.54
+    ],
+    "ltdWCr": [
+     0.0,
+     9.08,
+     null,
+     null,
+     1.44,
+     null,
+     4.08,
+     null,
+     4.06,
+     270.45,
+     null,
+     6.08
+    ]
+   },
+   "p9": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1
+   ]
   },
   "TLV:ISRA": {
    "rev": 0.48,
@@ -88760,37 +88967,118 @@
    ]
   },
   "TLV:TDHR": {
-   "fx": null,
-   "hist": null,
-   "rev": null,
-   "fcfV": null,
-   "eps": null,
-   "shares": null,
-   "ltdWCr": null,
-   "cr": null,
+   "rev": 0.98,
+   "cr": 1.11,
+   "eps": 1.84,
+   "shares": 38.0,
    "ltdWC": null,
+   "ltdWCr": 0.0,
    "epsPos10": null,
-   "divYears": null,
+   "divYears": 0,
    "g10": null,
    "pe3": null,
    "netNet": null,
    "epsPred": null,
    "roe10": null,
-   "roc": null,
-   "ltdY": null,
+   "roc": 2,
+   "ltdY": 0.0,
    "fcf": null,
+   "fcfV": null,
    "fcfG": null,
    "ret1": null,
    "projR": null,
-   "ptm": null,
+   "ptm": 8.8,
    "g": null,
-   "y": null,
-   "payout": null,
+   "y": 0.0,
+   "payout": 0,
    "salesG": null,
    "revG": null,
-   "m3": null,
+   "m3": 4.4,
    "ptr": null,
-   "p9": null
+   "fx": 1.0,
+   "hist": {
+    "years": [
+     2023,
+     2024,
+     2025
+    ],
+    "pe": [
+     null,
+     null,
+     null
+    ],
+    "ps": [
+     null,
+     null,
+     null
+    ],
+    "pb": [
+     null,
+     null,
+     null
+    ],
+    "roe": [
+     null,
+     null,
+     9.14
+    ],
+    "roa": [
+     null,
+     null,
+     0.93
+    ],
+    "roc": [
+     null,
+     2.48,
+     1.9
+    ],
+    "cr": [
+     null,
+     1.07,
+     1.11
+    ],
+    "de": [
+     null,
+     null,
+     null
+    ],
+    "margin": [
+     null,
+     null,
+     null
+    ],
+    "eps": [
+     null,
+     0.65,
+     1.52
+    ],
+    "shares": [
+     null,
+     33.0,
+     36.0
+    ],
+    "fcfV": [
+     null,
+     null,
+     null
+    ],
+    "ltdWCr": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "p9": [
+    1,
+    1,
+    null,
+    0,
+    1,
+    1,
+    0,
+    null,
+    null
+   ]
   },
   "TLV:MAXO": {
    "rev": 0.52,
@@ -99583,37 +99871,174 @@
    ]
   },
   "TLV:AMRM": {
-   "fx": null,
-   "hist": null,
-   "rev": null,
-   "fcfV": null,
-   "eps": null,
-   "shares": null,
-   "ltdWCr": null,
+   "rev": 0.54,
    "cr": null,
+   "eps": 0.59,
+   "shares": 79.0,
    "ltdWC": null,
+   "ltdWCr": 0.0,
    "epsPos10": null,
-   "divYears": null,
+   "divYears": 0,
    "g10": null,
-   "pe3": null,
+   "pe3": 17.7,
    "netNet": null,
    "epsPred": null,
    "roe10": null,
    "roc": null,
-   "ltdY": null,
+   "ltdY": 0.0,
    "fcf": null,
+   "fcfV": null,
    "fcfG": null,
    "ret1": null,
    "projR": null,
-   "ptm": null,
+   "ptm": 11.8,
    "g": null,
-   "y": null,
-   "payout": null,
-   "salesG": null,
-   "revG": null,
-   "m3": null,
+   "y": 0.0,
+   "payout": 0,
+   "salesG": 39,
+   "revG": 42,
+   "m3": 13.2,
    "ptr": null,
-   "p9": null
+   "fx": 1.0,
+   "hist": {
+    "years": [
+     2019,
+     2020,
+     2021,
+     2022,
+     2023,
+     2024,
+     2025
+    ],
+    "pe": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "ps": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "pb": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "roe": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "roa": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "roc": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "cr": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "de": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "margin": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "eps": [
+     null,
+     null,
+     null,
+     1.48,
+     0.84,
+     0.56,
+     0.67
+    ],
+    "shares": [
+     null,
+     null,
+     null,
+     60.0,
+     60.0,
+     69.0,
+     79.0
+    ],
+    "fcfV": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "ltdWCr": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "p9": [
+    null,
+    0,
+    null,
+    0,
+    1,
+    null,
+    0,
+    null,
+    null
+   ]
   },
   "TLV:DRAL": {
    "rev": 2.12,
@@ -100610,37 +101035,118 @@
    "p9": null
   },
   "TLV:RPOL": {
-   "fx": null,
-   "hist": null,
-   "rev": null,
-   "fcfV": null,
-   "eps": null,
-   "shares": null,
-   "ltdWCr": null,
-   "cr": null,
+   "rev": 0.04,
+   "cr": 5.09,
+   "eps": 0.77,
+   "shares": 8.0,
    "ltdWC": null,
+   "ltdWCr": 0.0,
    "epsPos10": null,
-   "divYears": null,
+   "divYears": 0,
    "g10": null,
-   "pe3": null,
+   "pe3": 9.0,
    "netNet": null,
    "epsPred": null,
    "roe10": null,
-   "roc": null,
-   "ltdY": null,
+   "roc": 15,
+   "ltdY": 0.0,
    "fcf": null,
+   "fcfV": null,
    "fcfG": null,
    "ret1": null,
    "projR": null,
-   "ptm": null,
+   "ptm": 20.3,
    "g": null,
-   "y": null,
-   "payout": null,
+   "y": 0.0,
+   "payout": 0,
    "salesG": null,
-   "revG": null,
-   "m3": null,
-   "ptr": null,
-   "p9": null
+   "revG": 18,
+   "m3": 22.1,
+   "ptr": 930,
+   "fx": 1.0,
+   "hist": {
+    "years": [
+     2022,
+     2023,
+     2024
+    ],
+    "pe": [
+     null,
+     null,
+     null
+    ],
+    "ps": [
+     null,
+     null,
+     null
+    ],
+    "pb": [
+     null,
+     null,
+     null
+    ],
+    "roe": [
+     null,
+     null,
+     35.92
+    ],
+    "roa": [
+     null,
+     null,
+     17.61
+    ],
+    "roc": [
+     null,
+     90.76,
+     64.23
+    ],
+    "cr": [
+     null,
+     3.85,
+     2.54
+    ],
+    "de": [
+     null,
+     null,
+     null
+    ],
+    "margin": [
+     null,
+     null,
+     null
+    ],
+    "eps": [
+     309.15,
+     482.87,
+     379.51
+    ],
+    "shares": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "fcfV": [
+     null,
+     null,
+     null
+    ],
+    "ltdWCr": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "p9": [
+    1,
+    1,
+    null,
+    0,
+    1,
+    0,
+    1,
+    null,
+    null
+   ]
   },
   "TLV:ACRO": {
    "rev": 0.21,
@@ -102789,37 +103295,118 @@
    ]
   },
   "TLV:AMAL": {
-   "fx": null,
-   "hist": null,
-   "rev": null,
-   "fcfV": null,
-   "eps": null,
-   "shares": null,
-   "ltdWCr": null,
-   "cr": null,
+   "rev": 0.73,
+   "cr": 0.75,
+   "eps": 3.34,
+   "shares": 14.0,
    "ltdWC": null,
+   "ltdWCr": 0.0,
    "epsPos10": null,
-   "divYears": null,
+   "divYears": 0,
    "g10": null,
-   "pe3": null,
+   "pe3": 785.9,
    "netNet": null,
    "epsPred": null,
    "roe10": null,
-   "roc": null,
-   "ltdY": null,
+   "roc": 28,
+   "ltdY": 0.0,
    "fcf": null,
+   "fcfV": null,
    "fcfG": null,
    "ret1": null,
    "projR": null,
-   "ptm": null,
+   "ptm": 8.1,
    "g": null,
-   "y": null,
-   "payout": null,
+   "y": 0.0,
+   "payout": 0,
    "salesG": null,
-   "revG": null,
-   "m3": null,
+   "revG": 19,
+   "m3": 5.1,
    "ptr": null,
-   "p9": null
+   "fx": 1.0,
+   "hist": {
+    "years": [
+     2022,
+     2023,
+     2024
+    ],
+    "pe": [
+     null,
+     null,
+     null
+    ],
+    "ps": [
+     null,
+     null,
+     null
+    ],
+    "pb": [
+     null,
+     null,
+     null
+    ],
+    "roe": [
+     null,
+     null,
+     85.25
+    ],
+    "roa": [
+     null,
+     null,
+     12.77
+    ],
+    "roc": [
+     null,
+     22.52,
+     27.43
+    ],
+    "cr": [
+     null,
+     0.65,
+     0.64
+    ],
+    "de": [
+     null,
+     null,
+     null
+    ],
+    "margin": [
+     null,
+     null,
+     null
+    ],
+    "eps": [
+     1.09,
+     2.13,
+     3.04
+    ],
+    "shares": [
+     14.0,
+     14.0,
+     14.0
+    ],
+    "fcfV": [
+     null,
+     null,
+     null
+    ],
+    "ltdWCr": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "p9": [
+    1,
+    1,
+    null,
+    1,
+    1,
+    0,
+    1,
+    null,
+    null
+   ]
   },
   "TLV:NFTA": {
    "rev": 0.79,
@@ -109020,7 +109607,7 @@
    "fcfV": 66.4,
    "fcfG": true,
    "ret1": false,
-   "projR": null,
+   "projR": -5,
    "ptm": 109.3,
    "g": 44,
    "y": 1.68,
@@ -145093,7 +145680,7 @@
    "fcf": true,
    "fcfV": 3.21,
    "fcfG": false,
-   "ret1": null,
+   "ret1": true,
    "projR": 13,
    "ptm": 29.9,
    "g": 0,
@@ -149200,7 +149787,7 @@
    "fcfV": -3.49,
    "fcfG": false,
    "ret1": true,
-   "projR": 15,
+   "projR": 19,
    "ptm": 17.4,
    "g": 15,
    "y": 6.17,
@@ -153404,7 +153991,7 @@
    "fcfV": 12.38,
    "fcfG": false,
    "ret1": false,
-   "projR": null,
+   "projR": 2,
    "ptm": 37.3,
    "g": -2,
    "y": 3.33,
@@ -160087,7 +160674,7 @@
    "fcf": true,
    "fcfV": 30.82,
    "fcfG": true,
-   "ret1": null,
+   "ret1": false,
    "projR": 13,
    "ptm": 37.4,
    "g": 14,
@@ -272204,7 +272791,7 @@
    "fcfV": 2.07,
    "fcfG": true,
    "ret1": false,
-   "projR": 24,
+   "projR": 35,
    "ptm": 30.4,
    "g": 26,
    "y": 2536.64,
@@ -304624,7 +305211,7 @@
    "fcfV": 1.75,
    "fcfG": true,
    "ret1": true,
-   "projR": -50,
+   "projR": -54,
    "ptm": 10.6,
    "g": null,
    "y": 0.0,
@@ -306416,7 +307003,7 @@
    "fcfV": 0.47,
    "fcfG": false,
    "ret1": false,
-   "projR": 20,
+   "projR": 31,
    "ptm": 1.4,
    "g": 5,
    "y": 7.36,
@@ -381476,7 +382063,7 @@
    "fcfV": 0.81,
    "fcfG": true,
    "ret1": true,
-   "projR": 21,
+   "projR": 33,
    "ptm": 8.6,
    "g": 2850,
    "y": 5.1,
@@ -394738,7 +395325,7 @@
    "fcfV": 0.54,
    "fcfG": true,
    "ret1": true,
-   "projR": null,
+   "projR": -24,
    "ptm": 7.2,
    "g": 21,
    "y": 0.0,
@@ -430356,7 +430943,7 @@
    "fcf": false,
    "fcfV": -0.1,
    "fcfG": false,
-   "ret1": false,
+   "ret1": true,
    "projR": null,
    "ptm": null,
    "g": null,
@@ -439888,7 +440475,7 @@
    "fcf": true,
    "fcfV": 0.87,
    "fcfG": true,
-   "ret1": null,
+   "ret1": false,
    "projR": 7,
    "ptm": 97.2,
    "g": 3,
@@ -518975,7 +519562,7 @@
    "fcf": false,
    "fcfV": -0.08,
    "fcfG": false,
-   "ret1": null,
+   "ret1": true,
    "projR": null,
    "ptm": -108.5,
    "g": null,
@@ -527017,7 +527604,7 @@
    "fcf": true,
    "fcfV": 0.8,
    "fcfG": true,
-   "ret1": true,
+   "ret1": false,
    "projR": -12,
    "ptm": 6.9,
    "g": -35,
@@ -572563,7 +573150,7 @@
    "fcfV": -0.13,
    "fcfG": false,
    "ret1": false,
-   "projR": -1,
+   "projR": -3,
    "ptm": 1.2,
    "g": null,
    "y": 0.0,
@@ -637460,7 +638047,7 @@
    "fcfV": 0.12,
    "fcfG": true,
    "ret1": false,
-   "projR": 18,
+   "projR": 27,
    "ptm": 9.9,
    "g": null,
    "y": 0.0,
