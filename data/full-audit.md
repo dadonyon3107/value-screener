@@ -1,24 +1,38 @@
-# Data-quality tripwires
+# Full-universe data audit
 
-- Tickers checked: 2973
-- Tickers flagged: 2026 (68.1%)
+- Generated: 2026-09-02
+- Tickers audited: **2985**
+- **OK: 915** (30.7%)
+- **WARN: 41** (1.4%)
+- **FAIL: 2029** (68.0%)
 
-## Failures by check
+A FAIL means the ticker's own numbers contradict each other, so at least one
+is wrong. A WARN is a soft issue - stale vintage, or a check that could not run.
+An OK means every identity holds and the per-year ratios match the site's page.
 
-- **pe_price** (1963) — the ratios file's PE disagrees with its own price and the statement EPS
-- **eps_shares** (128) — EPS x shares != net income — share-basis mismatch (ADS vs ordinary)
-- **income** (42) — net income != pretax - tax (+ discontinued ops, minority interest)
-- **balance** (19) — total assets != liabilities + equity (balance sheet does not balance)
-- **neg_rev** (3) — negative revenue
+## Issues by type
 
-## Flagged tickers
+| issue | tickers | meaning |
+|---|---|---|
+| pe_price | 1963 | the ratios file's PE disagrees with its own price and the statement EPS |
+| published pe != stored pe | 197 | latest.json disagrees with the stored CSV |
+| eps_shares | 128 | EPS x shares != net income — share-basis mismatch (ADS vs ordinary) |
+| income | 42 | net income != pretax - tax (+ discontinued ops, minority interest) |
+| balance | 19 | total assets != liabilities + equity (balance sheet does not balance) |
+| ratios not page-overlaid | 13 | still on CSV-export values, not the site's page values |
+| no statements | 9 | - |
+| roa_impossible | 7 | return on assets above 100% - recomputed off a broken export |
+| neg_rev | 3 | negative revenue |
+| missing cash_flow | 3 | - |
 
-| ticker | checks |
+## FAIL tickers (2029)
+
+| ticker | issues |
 |---|---|
 | AA | pe_price |
 | AAL | pe_price |
 | AAMI | pe_price |
-| AAP | pe_price |
+| AAP | pe_price, published pe != stored pe |
 | AAT | pe_price |
 | AAUC | income |
 | AB | eps_shares, pe_price |
@@ -31,7 +45,7 @@
 | ABR | pe_price |
 | ABT | pe_price |
 | ACGL | income, pe_price |
-| ACI | pe_price |
+| ACI | pe_price, published pe != stored pe |
 | ACLS | pe_price |
 | ACMR | pe_price |
 | ACN | pe_price |
@@ -59,10 +73,10 @@
 | AFYA | pe_price |
 | AGCO | pe_price |
 | AGI | pe_price |
-| AGM.A | pe_price |
+| AGM.A | pe_price, published pe != stored pe |
 | AGNC | eps_shares |
 | AGO | pe_price |
-| AGRO | pe_price |
+| AGRO | pe_price, published pe != stored pe |
 | AGYS | pe_price |
 | AHR | pe_price |
 | AIG | pe_price |
@@ -75,7 +89,7 @@
 | AKO.B | pe_price |
 | AKR | pe_price |
 | ALAB | pe_price |
-| ALB | income, pe_price |
+| ALB | income, pe_price, published pe != stored pe |
 | ALGT | pe_price |
 | ALH | balance, pe_price |
 | ALK | pe_price |
@@ -118,7 +132,7 @@
 | APP | pe_price |
 | APPF | pe_price |
 | APPN | eps_shares, pe_price |
-| APTV | pe_price |
+| APTV | pe_price, published pe != stored pe |
 | AR | pe_price |
 | ARCB | pe_price |
 | ARCC | pe_price |
@@ -143,7 +157,7 @@
 | ASO | pe_price |
 | ASR | pe_price |
 | ASTH | pe_price |
-| ASX | pe_price |
+| ASX | pe_price, published pe != stored pe |
 | ATAT | pe_price |
 | ATEN | pe_price |
 | ATHM | pe_price |
@@ -151,7 +165,7 @@
 | ATLC | pe_price |
 | ATO | pe_price |
 | ATS | pe_price |
-| AU | pe_price |
+| AU | pe_price, published pe != stored pe |
 | AUB | pe_price |
 | AUGO | pe_price |
 | AUPH | pe_price |
@@ -185,7 +199,7 @@
 | BAP | pe_price |
 | BAX | pe_price |
 | BBAR | eps_shares, pe_price |
-| BBD | eps_shares, pe_price |
+| BBD | eps_shares, pe_price, published pe != stored pe |
 | BBDO | pe_price |
 | BBUC | eps_shares, pe_price |
 | BBVA | pe_price |
@@ -198,10 +212,10 @@
 | BCRX | pe_price |
 | BCS | pe_price |
 | BDC | pe_price |
-| BDX | pe_price |
+| BDX | pe_price, published pe != stored pe |
 | BEKE | pe_price |
 | BELFA | pe_price |
-| BELFB | eps_shares, pe_price |
+| BELFB | eps_shares, pe_price, published pe != stored pe |
 | BEN | pe_price |
 | BF.A | pe_price |
 | BF.B | pe_price |
@@ -211,7 +225,7 @@
 | BFST | pe_price |
 | BG | pe_price |
 | BGC | pe_price |
-| BGSI | pe_price |
+| BGSI | pe_price, published pe != stored pe |
 | BH | pe_price |
 | BH.A | pe_price |
 | BHE | pe_price |
@@ -246,7 +260,7 @@
 | BN | pe_price |
 | BNL | pe_price |
 | BNS | pe_price |
-| BNT | eps_shares |
+| BNT | eps_shares, published pe != stored pe |
 | BNTX | pe_price |
 | BNY | pe_price |
 | BOH | pe_price |
@@ -257,8 +271,8 @@
 | BP | pe_price |
 | BPOP | pe_price |
 | BR | pe_price |
-| BRAI | eps_shares |
-| BRBI | pe_price |
+| BRAI | eps_shares, roa_impossible |
+| BRBI | pe_price, published pe != stored pe |
 | BRBR | pe_price |
 | BRC | pe_price |
 | BRK.A | pe_price |
@@ -266,10 +280,10 @@
 | BRKR | pe_price |
 | BRO | pe_price |
 | BROS | pe_price |
-| BRSL | pe_price |
+| BRSL | pe_price, published pe != stored pe |
 | BRX | pe_price |
 | BSAC | eps_shares, pe_price |
-| BSBR | pe_price |
+| BSBR | pe_price, published pe != stored pe |
 | BSM | pe_price |
 | BSY | pe_price |
 | BTDR | eps_shares |
@@ -280,7 +294,7 @@
 | BTU | pe_price |
 | BUSE | pe_price |
 | BV | income, pe_price |
-| BVN | pe_price |
+| BVN | pe_price, published pe != stored pe |
 | BVS | pe_price |
 | BWA | pe_price |
 | BWLP | pe_price |
@@ -299,9 +313,9 @@
 | CALM | pe_price |
 | CALX | pe_price |
 | CALY | pe_price |
-| CAMT | pe_price |
+| CAMT | pe_price, published pe != stored pe |
 | CAR | pe_price |
-| CARG | pe_price |
+| CARG | pe_price, published pe != stored pe |
 | CART | pe_price |
 | CASH | pe_price |
 | CAT | pe_price |
@@ -321,7 +335,7 @@
 | CCC | income, pe_price |
 | CCEC | eps_shares, pe_price |
 | CCEP | pe_price |
-| CCI | eps_shares, pe_price |
+| CCI | eps_shares, pe_price, published pe != stored pe |
 | CCJ | pe_price |
 | CCK | pe_price |
 | CCL | pe_price |
@@ -338,14 +352,14 @@
 | CENT | pe_price |
 | CENTA | pe_price |
 | CENX | pe_price |
-| CEPU | pe_price |
+| CEPU | pe_price, published pe != stored pe |
 | CET | pe_price |
 | CF | pe_price |
 | CFFN | pe_price |
 | CFG | pe_price |
 | CFR | pe_price |
 | CGAU | pe_price |
-| CHA | pe_price |
+| CHA | pe_price, published pe != stored pe |
 | CHCO | pe_price |
 | CHD | pe_price |
 | CHDN | pe_price |
@@ -359,17 +373,17 @@
 | CHTR | pe_price |
 | CHWY | eps_shares, pe_price |
 | CI | pe_price |
-| CIB | eps_shares, pe_price |
+| CIB | eps_shares, pe_price, published pe != stored pe |
 | CIEN | pe_price |
-| CIG | pe_price |
+| CIG | pe_price, published pe != stored pe |
 | CIGI | pe_price |
 | CL | pe_price |
-| CLBK | pe_price |
+| CLBK | pe_price, published pe != stored pe |
 | CLBT | pe_price |
 | CLSK | pe_price |
 | CLX | pe_price |
 | CM | pe_price |
-| CMBT | pe_price |
+| CMBT | pe_price, published pe != stored pe |
 | CMC | pe_price |
 | CMCSA | pe_price |
 | CME | pe_price |
@@ -415,7 +429,7 @@
 | CRCL | eps_shares |
 | CRCT | pe_price |
 | CRDO | pe_price |
-| CRGY | eps_shares, pe_price |
+| CRGY | eps_shares, pe_price, published pe != stored pe |
 | CRH | pe_price |
 | CRI | balance, pe_price |
 | CRK | pe_price |
@@ -425,7 +439,7 @@
 | CRSR | pe_price |
 | CRUS | pe_price |
 | CRVS | eps_shares |
-| CRWD | pe_price |
+| CRWD | pe_price, published pe != stored pe |
 | CSAN | pe_price |
 | CSCO | pe_price |
 | CSGP | pe_price |
@@ -454,11 +468,11 @@
 | CWEN | pe_price |
 | CWK | pe_price |
 | CWST | income, pe_price |
-| CX | eps_shares, pe_price |
+| CX | eps_shares, pe_price, published pe != stored pe |
 | CXM | pe_price |
 | CXT | pe_price |
 | CXW | pe_price |
-| CYD | pe_price |
+| CYD | pe_price, published pe != stored pe |
 | DAC | pe_price |
 | DAL | pe_price |
 | DAN | pe_price |
@@ -471,7 +485,7 @@
 | DBX | pe_price |
 | DCO | pe_price |
 | DCOM | pe_price |
-| DD | pe_price |
+| DD | pe_price, published pe != stored pe |
 | DDOG | pe_price |
 | DDS | pe_price |
 | DEA | pe_price |
@@ -504,7 +518,7 @@
 | DOCN | pe_price |
 | DOCS | pe_price |
 | DOCU | pe_price |
-| DOLE | pe_price |
+| DOLE | pe_price, published pe != stored pe |
 | DOO | pe_price |
 | DOV | pe_price |
 | DOW | pe_price |
@@ -518,15 +532,15 @@
 | DV | pe_price |
 | DVA | pe_price |
 | DVN | pe_price |
-| DX | pe_price |
+| DX | pe_price, published pe != stored pe |
 | DXC | pe_price |
 | DXCM | pe_price |
 | DXPE | pe_price |
-| E | pe_price |
+| E | pe_price, published pe != stored pe |
 | EAT | pe_price |
 | EBAY | pe_price |
 | EBC | pe_price |
-| EC | pe_price |
+| EC | pe_price, published pe != stored pe |
 | ECL | pe_price |
 | ECO | pe_price |
 | ECPG | pe_price |
@@ -540,7 +554,7 @@
 | EFSC | pe_price |
 | EFXT | pe_price |
 | EG | pe_price |
-| EGO | pe_price |
+| EGO | pe_price, published pe != stored pe |
 | EGP | pe_price |
 | EL | pe_price |
 | ELE | pe_price |
@@ -548,7 +562,7 @@
 | ELPC | eps_shares, pe_price |
 | ELS | pe_price |
 | ELVR | pe_price |
-| EMBJ | pe_price |
+| EMBJ | pe_price, published pe != stored pe |
 | EMN | pe_price |
 | EMR | pe_price |
 | ENB | pe_price |
@@ -568,10 +582,10 @@
 | EQBK | pe_price |
 | EQH | pe_price |
 | EQIX | pe_price |
-| EQNR | pe_price |
+| EQNR | pe_price, published pe != stored pe |
 | EQT | pe_price |
 | EQX | eps_shares, pe_price |
-| ERIC | pe_price |
+| ERIC | pe_price, published pe != stored pe |
 | ERIE | pe_price |
 | ERO | pe_price |
 | ES | pe_price |
@@ -586,7 +600,7 @@
 | ET | pe_price |
 | ETN | pe_price |
 | ETOR | pe_price |
-| ETSY | pe_price |
+| ETSY | pe_price, published pe != stored pe |
 | EVR | pe_price |
 | EWBC | pe_price |
 | EXEL | pe_price |
@@ -611,7 +625,7 @@
 | FCX | pe_price |
 | FDX | pe_price |
 | FE | eps_shares |
-| FER | pe_price |
+| FER | pe_price, published pe != stored pe |
 | FERG | eps_shares, pe_price |
 | FFBC | pe_price |
 | FFIN | pe_price |
@@ -631,7 +645,7 @@
 | FLEX | pe_price |
 | FLNC | pe_price |
 | FLNG | pe_price |
-| FLO | pe_price |
+| FLO | pe_price, published pe != stored pe |
 | FLOC | eps_shares, pe_price |
 | FLR | pe_price |
 | FLS | pe_price |
@@ -639,7 +653,7 @@
 | FMBH | pe_price |
 | FMC | pe_price |
 | FMS | pe_price |
-| FMX | eps_shares, pe_price |
+| FMX | eps_shares, pe_price, published pe != stored pe |
 | FNB | pe_price |
 | FORTY | pe_price |
 | FOUR | pe_price |
@@ -647,7 +661,7 @@
 | FOXA | pe_price |
 | FR | pe_price |
 | FRME | pe_price |
-| FRO | pe_price |
+| FRO | pe_price, published pe != stored pe |
 | FRPT | pe_price |
 | FRSH | pe_price |
 | FRT | pe_price |
@@ -661,7 +675,7 @@
 | FTV | pe_price |
 | FULT | pe_price |
 | FUTU | pe_price |
-| FWONA | eps_shares, pe_price |
+| FWONA | eps_shares, pe_price, published pe != stored pe |
 | G | pe_price |
 | GABC | pe_price |
 | GAP | pe_price |
@@ -673,33 +687,33 @@
 | GCT | pe_price |
 | GD | pe_price |
 | GDDY | pe_price |
-| GDRX | pe_price |
+| GDRX | pe_price, published pe != stored pe |
 | GDS | pe_price |
 | GE | pe_price |
-| GEF | pe_price |
-| GEF.B | eps_shares, pe_price |
+| GEF | pe_price, published pe != stored pe |
+| GEF.B | eps_shares, pe_price, published pe != stored pe |
 | GEL | pe_price |
 | GEN | pe_price |
 | GEO | pe_price |
 | GFF | pe_price |
-| GFI | pe_price |
+| GFI | pe_price, published pe != stored pe |
 | GFL | eps_shares, pe_price |
-| GGAL | income, pe_price |
-| GGB | eps_shares, pe_price |
+| GGAL | income, pe_price, published pe != stored pe |
+| GGB | eps_shares, pe_price, published pe != stored pe |
 | GIB | pe_price |
 | GIC | pe_price |
 | GIII | pe_price |
-| GIL | pe_price |
+| GIL | pe_price, published pe != stored pe |
 | GILD | pe_price |
 | GIS | pe_price |
 | GL | pe_price |
 | GLBE | pe_price |
-| GLNG | pe_price |
+| GLNG | pe_price, published pe != stored pe |
 | GLOB | pe_price |
 | GLP | pe_price |
 | GLPI | pe_price |
 | GLW | pe_price |
-| GLXY | pe_price |
+| GLXY | pe_price, roa_impossible |
 | GM | pe_price |
 | GMAB | pe_price |
 | GME | pe_price |
@@ -718,7 +732,7 @@
 | GPOR | pe_price |
 | GRAB | pe_price |
 | GRC | pe_price |
-| GRFS | pe_price |
+| GRFS | pe_price, published pe != stored pe |
 | GRMN | pe_price |
 | GRND | pe_price |
 | GS | pe_price |
@@ -734,7 +748,7 @@
 | GWRE | pe_price |
 | H | pe_price |
 | HAE | pe_price |
-| HAFN | pe_price |
+| HAFN | pe_price, published pe != stored pe |
 | HAL | pe_price |
 | HALO | pe_price |
 | HAS | pe_price |
@@ -755,7 +769,7 @@
 | HESM | pe_price |
 | HFWA | pe_price |
 | HG | pe_price |
-| HGTY | eps_shares, pe_price |
+| HGTY | eps_shares, pe_price, published pe != stored pe |
 | HGV | pe_price |
 | HHH | pe_price |
 | HIG | pe_price |
@@ -803,7 +817,7 @@
 | HURN | pe_price |
 | HUT | pe_price |
 | HWC | pe_price |
-| HZO | pe_price |
+| HZO | pe_price, published pe != stored pe |
 | IAG | pe_price |
 | IART | pe_price |
 | IBKR | pe_price |
@@ -813,7 +827,7 @@
 | IBP | pe_price |
 | ICE | pe_price |
 | ICL | pe_price |
-| ICLR | pe_price |
+| ICLR | pe_price, published pe != stored pe |
 | ICUI | eps_shares |
 | IDCC | pe_price |
 | IE | eps_shares |
@@ -822,14 +836,15 @@
 | IFF | pe_price |
 | IFS | pe_price |
 | IHG | pe_price |
-| IHS | income |
+| IHS | income, published pe != stored pe |
 | IIPR | pe_price |
 | ILMN | pe_price |
 | IMAX | pe_price |
+| IMC | roa_impossible |
 | IMCR | eps_shares |
 | IMKTA | pe_price |
 | IMO | pe_price |
-| IMOS | pe_price |
+| IMOS | pe_price, published pe != stored pe |
 | IMTX | pe_price |
 | INBX | pe_price |
 | INCY | pe_price |
@@ -857,7 +872,7 @@
 | IREN | pe_price |
 | IRM | pe_price |
 | IRMD | pe_price |
-| IRS | income, pe_price |
+| IRS | income, pe_price, published pe != stored pe |
 | IRT | balance, pe_price |
 | ISRG | pe_price |
 | IT | pe_price |
@@ -875,8 +890,8 @@
 | JBHT | pe_price |
 | JBL | pe_price |
 | JBS | pe_price |
-| JCAP | pe_price |
-| JCI | pe_price |
+| JCAP | pe_price, published pe != stored pe |
+| JCI | pe_price, published pe != stored pe |
 | JD | pe_price |
 | JEF | pe_price |
 | JHX | pe_price |
@@ -895,7 +910,7 @@
 | KDP | pe_price |
 | KEEL | income |
 | KEN | income, pe_price |
-| KEP | pe_price |
+| KEP | pe_price, published pe != stored pe |
 | KEX | pe_price |
 | KEY | pe_price |
 | KFY | pe_price |
@@ -925,7 +940,7 @@
 | KRYS | pe_price |
 | KSPI | pe_price |
 | KSS | pe_price |
-| KT | pe_price |
+| KT | pe_price, published pe != stored pe |
 | KTOS | eps_shares |
 | KVUE | pe_price |
 | KWR | pe_price |
@@ -963,7 +978,7 @@
 | LNTH | pe_price |
 | LOAR | pe_price |
 | LOGI | pe_price |
-| LOMA | pe_price |
+| LOMA | pe_price, published pe != stored pe |
 | LOW | pe_price |
 | LPG | pe_price |
 | LPX | pe_price |
@@ -972,14 +987,14 @@
 | LSCC | pe_price |
 | LSTR | pe_price |
 | LTC | pe_price |
-| LTGO | eps_shares |
+| LTGO | eps_shares, roa_impossible |
 | LTH | pe_price |
 | LTM | pe_price |
 | LU | pe_price |
 | LULU | pe_price |
 | LUNR | pe_price |
 | LUV | pe_price |
-| LUXE | pe_price |
+| LUXE | pe_price, published pe != stored pe |
 | LVS | pe_price |
 | LW | pe_price |
 | LXP | pe_price |
@@ -1022,12 +1037,12 @@
 | MGM | pe_price |
 | MGNI | pe_price |
 | MGRC | pe_price |
-| MGRT | pe_price |
+| MGRT | pe_price, published pe != stored pe |
 | MGY | pe_price |
 | MH | pe_price |
 | MHO | pe_price |
 | MIDD | pe_price |
-| MIR | pe_price |
+| MIR | pe_price, published pe != stored pe |
 | MKC | pe_price |
 | MKC.V | pe_price |
 | MKTX | pe_price |
@@ -1038,7 +1053,7 @@
 | MNDY | pe_price |
 | MNKD | pe_price |
 | MNR | pe_price |
-| MNSO | pe_price |
+| MNSO | pe_price, published pe != stored pe |
 | MNST | pe_price |
 | MO | pe_price |
 | MOD | pe_price |
@@ -1061,7 +1076,7 @@
 | MSGE | pe_price |
 | MSM | pe_price |
 | MSTR | pe_price |
-| MT | pe_price |
+| MT | pe_price, published pe != stored pe |
 | MTB | pe_price |
 | MTCH | pe_price |
 | MTDR | pe_price |
@@ -1077,12 +1092,12 @@
 | MYE | pe_price |
 | MYRG | pe_price |
 | MZTI | pe_price |
-| NAT | pe_price |
+| NAT | pe_price, published pe != stored pe |
 | NATL | pe_price |
 | NBHC | pe_price |
 | NBIS | pe_price |
 | NBIX | pe_price |
-| NBN | pe_price |
+| NBN | pe_price, published pe != stored pe |
 | NBR | eps_shares, pe_price |
 | NBTB | pe_price |
 | NCLH | pe_price |
@@ -1121,7 +1136,7 @@
 | NSSC | pe_price |
 | NTB | pe_price |
 | NTES | income, pe_price |
-| NTNX | pe_price |
+| NTNX | pe_price, published pe != stored pe |
 | NTR | pe_price |
 | NTRS | income, pe_price |
 | NTST | pe_price |
@@ -1149,7 +1164,7 @@
 | OBDC | pe_price |
 | OBK | pe_price |
 | OC | pe_price |
-| OCFC | pe_price |
+| OCFC | pe_price, published pe != stored pe |
 | OCSL | pe_price |
 | ODC | pe_price |
 | OFG | pe_price |
@@ -1162,11 +1177,11 @@
 | OLED | pe_price |
 | OLN | pe_price |
 | OMAB | pe_price |
-| OMC | pe_price |
+| OMC | pe_price, published pe != stored pe |
 | OMCL | pe_price |
 | ON | pe_price |
 | ONB | pe_price |
-| ONC | pe_price |
+| ONC | pe_price, published pe != stored pe |
 | ONON | pe_price |
 | OPCH | pe_price |
 | OPLN | pe_price |
@@ -1176,7 +1191,7 @@
 | ORI | pe_price |
 | ORLY | pe_price |
 | OSBC | pe_price |
-| OSCR | pe_price |
+| OSCR | pe_price, published pe != stored pe |
 | OSIS | pe_price |
 | OSK | pe_price |
 | OTEX | pe_price |
@@ -1186,18 +1201,18 @@
 | OUT | pe_price |
 | OVV | pe_price |
 | OWL | pe_price |
-| OXY | pe_price |
-| OZK | pe_price |
+| OXY | pe_price, published pe != stored pe |
+| OZK | pe_price, published pe != stored pe |
 | P | pe_price |
 | PAA | pe_price |
 | PAAS | pe_price |
 | PAC | pe_price |
 | PACS | pe_price |
 | PAG | pe_price |
-| PAGP | pe_price |
+| PAGP | pe_price, published pe != stored pe |
 | PAGS | pe_price |
 | PAHC | pe_price |
-| PAM | pe_price |
+| PAM | pe_price, published pe != stored pe |
 | PANW | pe_price |
 | PARR | pe_price |
 | PATK | pe_price |
@@ -1211,7 +1226,7 @@
 | PBF | pe_price |
 | PBH | pe_price |
 | PBI | pe_price |
-| PBR | eps_shares, pe_price |
+| PBR | eps_shares, pe_price, published pe != stored pe |
 | PBR.A | pe_price |
 | PCAR | pe_price |
 | PCOR | balance |
@@ -1239,12 +1254,12 @@
 | PHIN | pe_price |
 | PI | pe_price |
 | PII | pe_price |
-| PINS | pe_price |
+| PINS | pe_price, published pe != stored pe |
 | PIPR | pe_price |
-| PJT | pe_price |
+| PJT | pe_price, published pe != stored pe |
 | PK | pe_price |
 | PKG | pe_price |
-| PKX | pe_price |
+| PKX | pe_price, published pe != stored pe |
 | PLD | pe_price |
 | PLGO | pe_price |
 | PLMR | pe_price |
@@ -1288,7 +1303,7 @@
 | PTC | balance |
 | PTCT | pe_price |
 | PTEN | pe_price |
-| PTGX | pe_price |
+| PTGX | pe_price, published pe != stored pe |
 | PTON | pe_price |
 | PUK | pe_price |
 | PUMP | pe_price |
@@ -1319,7 +1334,7 @@
 | RDNT | pe_price |
 | RDVT | pe_price |
 | RDWR | pe_price |
-| RDY | pe_price |
+| RDY | pe_price, published pe != stored pe |
 | REG | pe_price |
 | REGN | pe_price |
 | RELX | pe_price |
@@ -1337,9 +1352,9 @@
 | RIOT | pe_price |
 | RITM | pe_price |
 | RJF | pe_price |
-| RKT | eps_shares, pe_price |
+| RKT | eps_shares, pe_price, published pe != stored pe |
 | RL | pe_price |
-| RLJ | pe_price |
+| RLJ | pe_price, published pe != stored pe |
 | RLX | pe_price |
 | RMBS | pe_price |
 | RNG | pe_price |
@@ -1356,7 +1371,7 @@
 | RRR | pe_price |
 | RSG | pe_price |
 | RSI | eps_shares, pe_price |
-| RTO | pe_price |
+| RTO | pe_price, published pe != stored pe |
 | RTX | pe_price |
 | RUN | pe_price |
 | RUSHA | pe_price |
@@ -1367,12 +1382,12 @@
 | RY | pe_price |
 | RYAAY | pe_price |
 | RYAN | pe_price |
-| RYN | income, pe_price |
+| RYN | income, pe_price, published pe != stored pe |
 | RYZ | pe_price |
 | SAFE | pe_price |
 | SAIC | pe_price |
 | SAM | pe_price |
-| SAN | pe_price |
+| SAN | pe_price, published pe != stored pe |
 | SANM | pe_price |
 | SAP | pe_price |
 | SARO | pe_price |
@@ -1383,14 +1398,14 @@
 | SBH | pe_price |
 | SBLK | pe_price |
 | SBRA | pe_price |
-| SBS | pe_price |
+| SBS | pe_price, published pe != stored pe |
 | SBUX | pe_price |
 | SCCO | pe_price |
 | SCHW | pe_price |
 | SCL | pe_price |
 | SCSC | pe_price |
 | SDGR | pe_price |
-| SDRL | pe_price |
+| SDRL | pe_price, published pe != stored pe |
 | SE | pe_price |
 | SEB | pe_price |
 | SEI | pe_price |
@@ -1406,7 +1421,7 @@
 | SGHC | pe_price |
 | SHAK | pe_price |
 | SHC | pe_price |
-| SHEL | pe_price |
+| SHEL | pe_price, published pe != stored pe |
 | SHG | pe_price |
 | SHLS | pe_price |
 | SHO | pe_price |
@@ -1415,11 +1430,11 @@
 | SID | eps_shares |
 | SIFY | pe_price |
 | SIG | pe_price |
-| SIM | pe_price |
-| SIMO | pe_price |
+| SIM | pe_price, published pe != stored pe |
+| SIMO | pe_price, published pe != stored pe |
 | SIRI | pe_price |
 | SJM | pe_price |
-| SKM | pe_price |
+| SKM | pe_price, published pe != stored pe |
 | SKT | pe_price |
 | SKWD | pe_price |
 | SKY | pe_price |
@@ -1433,9 +1448,10 @@
 | SLSR | eps_shares, pe_price |
 | SLVM | pe_price |
 | SM | pe_price |
-| SMCI | pe_price |
+| SMCI | pe_price, published pe != stored pe |
 | SMFG | pe_price |
 | SMG | pe_price |
+| SMMT | roa_impossible |
 | SMTC | income |
 | SNA | pe_price |
 | SNDK | pe_price |
@@ -1458,13 +1474,13 @@
 | SPNT | pe_price |
 | SPOT | pe_price |
 | SPXC | pe_price |
-| SQM | pe_price |
+| SQM | pe_price, published pe != stored pe |
 | SR | pe_price |
 | SRAD | pe_price |
 | SRCE | pe_price |
 | SRPT | pe_price |
 | SSB | pe_price |
-| SSL | pe_price |
+| SSL | pe_price, published pe != stored pe |
 | SSNC | pe_price |
 | SSRM | pe_price |
 | ST | pe_price |
@@ -1472,7 +1488,7 @@
 | STBA | pe_price |
 | STC | pe_price |
 | STEP | pe_price |
-| STGW | pe_price |
+| STGW | pe_price, published pe != stored pe |
 | STLA | pe_price |
 | STM | pe_price |
 | STN | pe_price |
@@ -1490,7 +1506,7 @@
 | SUNB | pe_price |
 | SUPN | pe_price |
 | SUZ | income, pe_price |
-| SVM | pe_price |
+| SVM | pe_price, published pe != stored pe |
 | SVV | pe_price |
 | SW | pe_price |
 | SWK | pe_price |
@@ -1517,7 +1533,7 @@
 | TDY | pe_price |
 | TECK | eps_shares, pe_price |
 | TEL | pe_price |
-| TEN | pe_price |
+| TEN | pe_price, published pe != stored pe |
 | TEO | pe_price |
 | TER | pe_price |
 | TFC | pe_price |
@@ -1544,8 +1560,8 @@
 | TLN | eps_shares, pe_price |
 | TLV:ABRA | pe_price |
 | TLV:ACCL | pe_price |
-| TLV:ACKR | pe_price |
-| TLV:ACRO | pe_price |
+| TLV:ACKR | pe_price, published pe != stored pe |
+| TLV:ACRO | pe_price, published pe != stored pe |
 | TLV:ADGR | pe_price |
 | TLV:AFHL | pe_price |
 | TLV:AFPR | pe_price |
@@ -1554,62 +1570,62 @@
 | TLV:ALHE | pe_price |
 | TLV:ALLT | pe_price |
 | TLV:ALMA | pe_price |
-| TLV:ALMY | pe_price |
+| TLV:ALMY | pe_price, published pe != stored pe |
 | TLV:ALTF | pe_price |
 | TLV:ALUMA | pe_price |
 | TLV:AMD | pe_price |
 | TLV:AMOT | pe_price |
-| TLV:AMPA | pe_price |
+| TLV:AMPA | pe_price, published pe != stored pe |
 | TLV:AMRK | pe_price |
-| TLV:AMRM | pe_price |
+| TLV:AMRM | pe_price, ratios not page-overlaid |
 | TLV:ANLT | pe_price |
-| TLV:ARAN | pe_price |
+| TLV:ARAN | pe_price, published pe != stored pe |
 | TLV:ARD | pe_price |
-| TLV:ARF | eps_shares, pe_price |
+| TLV:ARF | eps_shares, pe_price, published pe != stored pe |
 | TLV:ARGO | pe_price |
 | TLV:ARIN | pe_price |
-| TLV:ARYT | pe_price |
-| TLV:ASGR | pe_price |
-| TLV:ASHG | pe_price |
-| TLV:ASHO | pe_price |
+| TLV:ARYT | pe_price, published pe != stored pe |
+| TLV:ASGR | pe_price, published pe != stored pe |
+| TLV:ASHG | pe_price, published pe != stored pe |
+| TLV:ASHO | pe_price, published pe != stored pe |
 | TLV:ATRY | pe_price |
 | TLV:AUDC | pe_price |
 | TLV:AURA | pe_price |
 | TLV:AVGL | pe_price |
 | TLV:AVIA | pe_price |
-| TLV:AVIV | pe_price |
+| TLV:AVIV | pe_price, published pe != stored pe |
 | TLV:AVRT | pe_price |
 | TLV:AZRG | pe_price |
 | TLV:AZRM | pe_price |
 | TLV:BEZQ | pe_price |
 | TLV:BIG | pe_price |
-| TLV:BIRM | pe_price |
-| TLV:BKFR | pe_price |
+| TLV:BIRM | pe_price, published pe != stored pe |
+| TLV:BKFR | pe_price, published pe != stored pe |
 | TLV:BKRY | pe_price |
 | TLV:BLEG | eps_shares |
-| TLV:BLGO | pe_price |
-| TLV:BLSR | pe_price |
+| TLV:BLGO | pe_price, published pe != stored pe |
+| TLV:BLSR | pe_price, published pe != stored pe |
 | TLV:BOTI | pe_price |
 | TLV:BRAN | pe_price |
-| TLV:BRIH | pe_price |
+| TLV:BRIH | pe_price, published pe != stored pe |
 | TLV:BRMG | pe_price |
 | TLV:BRND | pe_price |
 | TLV:BSEN | pe_price |
-| TLV:BVC | eps_shares |
+| TLV:BVC | eps_shares, published pe != stored pe |
 | TLV:BWAY | pe_price |
 | TLV:CAMT | pe_price |
 | TLV:CAST | pe_price |
 | TLV:CDEV | pe_price |
 | TLV:CEL | pe_price |
-| TLV:CILO | pe_price |
+| TLV:CILO | pe_price, published pe != stored pe |
 | TLV:CISY | pe_price |
-| TLV:CMDR | pe_price |
-| TLV:CNGL | pe_price |
+| TLV:CMDR | pe_price, published pe != stored pe |
+| TLV:CNGL | pe_price, published pe != stored pe |
 | TLV:CRML | pe_price |
 | TLV:CRSM | pe_price |
 | TLV:CRSR | pe_price |
 | TLV:DANE | pe_price |
-| TLV:DELG | pe_price |
+| TLV:DELG | pe_price, published pe != stored pe |
 | TLV:DIMRI | pe_price |
 | TLV:DIPL | pe_price |
 | TLV:DLEA | pe_price |
@@ -1618,16 +1634,16 @@
 | TLV:DLTI | pe_price |
 | TLV:DNYA | pe_price |
 | TLV:DRAL | pe_price |
-| TLV:DRSL | pe_price |
+| TLV:DRSL | pe_price, ratios not page-overlaid |
 | TLV:DSCT | pe_price |
 | TLV:DUNI | pe_price |
 | TLV:ECP | pe_price |
-| TLV:EFCP | pe_price |
-| TLV:ELAD | pe_price |
+| TLV:EFCP | pe_price, published pe != stored pe |
+| TLV:ELAD | pe_price, published pe != stored pe |
 | TLV:ELAL | pe_price |
-| TLV:ELCO | pe_price |
+| TLV:ELCO | pe_price, published pe != stored pe |
 | TLV:ELLO | eps_shares, pe_price |
-| TLV:ELMR | pe_price |
+| TLV:ELMR | pe_price, published pe != stored pe |
 | TLV:ELTR | pe_price |
 | TLV:EMDV | pe_price |
 | TLV:ENLT | pe_price |
@@ -1643,29 +1659,29 @@
 | TLV:FOX | pe_price |
 | TLV:FRDN | pe_price |
 | TLV:GAGR | pe_price |
-| TLV:GAON | pe_price |
+| TLV:GAON | pe_price, published pe != stored pe |
 | TLV:GCT | pe_price |
 | TLV:GILT | pe_price |
-| TLV:GKL | pe_price |
+| TLV:GKL | pe_price, published pe != stored pe |
 | TLV:GLRS | pe_price |
-| TLV:GLTL | pe_price |
-| TLV:GNRS | pe_price |
+| TLV:GLTL | pe_price, published pe != stored pe |
+| TLV:GNRS | pe_price, published pe != stored pe |
 | TLV:GOHO | pe_price |
 | TLV:GOLD | pe_price |
 | TLV:GOLF | pe_price |
-| TLV:GOSS | pe_price |
+| TLV:GOSS | pe_price, published pe != stored pe |
 | TLV:GRIN | pe_price |
 | TLV:GSFI | pe_price |
 | TLV:GVYM | pe_price |
-| TLV:HAMAT | pe_price |
+| TLV:HAMAT | pe_price, published pe != stored pe |
 | TLV:HGG | pe_price |
 | TLV:HGGE | pe_price |
 | TLV:HIPR | pe_price |
 | TLV:HLAN | pe_price |
 | TLV:HLMS | pe_price |
-| TLV:HRON | pe_price |
+| TLV:HRON | pe_price, published pe != stored pe |
 | TLV:IBI | pe_price |
-| TLV:IBIU | pe_price |
+| TLV:IBIU | pe_price, published pe != stored pe |
 | TLV:ICHO | pe_price |
 | TLV:ICL | pe_price |
 | TLV:ICON | pe_price |
@@ -1676,7 +1692,7 @@
 | TLV:IMCO | eps_shares, pe_price |
 | TLV:INRM | pe_price |
 | TLV:INTR | pe_price |
-| TLV:ISCN | pe_price |
+| TLV:ISCN | pe_price, published pe != stored pe |
 | TLV:ISHI | pe_price |
 | TLV:ISHO | pe_price |
 | TLV:ISI | pe_price |
@@ -1692,7 +1708,7 @@
 | TLV:KMDA | pe_price |
 | TLV:KNFM | pe_price |
 | TLV:KRDI | pe_price |
-| TLV:KRUR | pe_price |
+| TLV:KRUR | pe_price, published pe != stored pe |
 | TLV:KSTN | pe_price |
 | TLV:LAHAV | pe_price |
 | TLV:LAPD | pe_price |
@@ -1705,23 +1721,23 @@
 | TLV:LUZN | pe_price |
 | TLV:MAXO | pe_price |
 | TLV:MCLL | pe_price |
-| TLV:MDPR | pe_price |
+| TLV:MDPR | pe_price, published pe != stored pe |
 | TLV:MDTR | pe_price |
-| TLV:MGDO | pe_price |
+| TLV:MGDO | pe_price, published pe != stored pe |
 | TLV:MGOR | pe_price |
-| TLV:MGRT | pe_price |
-| TLV:MISH | pe_price |
+| TLV:MGRT | pe_price, published pe != stored pe |
+| TLV:MISH | pe_price, published pe != stored pe |
 | TLV:MLRN | eps_shares |
 | TLV:MLSR | pe_price |
-| TLV:MLTH | pe_price |
+| TLV:MLTH | pe_price, published pe != stored pe |
 | TLV:MNIN | pe_price |
 | TLV:MNRT | pe_price |
 | TLV:MPP | pe_price |
-| TLV:MRG | pe_price |
+| TLV:MRG | pe_price, published pe != stored pe |
 | TLV:MRIN | pe_price |
 | TLV:MSLA | pe_price |
 | TLV:MTAV | pe_price |
-| TLV:MTRD | pe_price |
+| TLV:MTRD | pe_price, ratios not page-overlaid |
 | TLV:MTRN | pe_price |
 | TLV:MTRX | pe_price |
 | TLV:MVNE | pe_price |
@@ -1752,20 +1768,20 @@
 | TLV:PLSN | pe_price |
 | TLV:PMNT | pe_price |
 | TLV:POLI | pe_price |
-| TLV:POLP | pe_price |
-| TLV:PRMG | pe_price |
+| TLV:POLP | pe_price, published pe != stored pe |
+| TLV:PRMG | pe_price, published pe != stored pe |
 | TLV:PRSK | pe_price |
 | TLV:PRTC | pe_price |
-| TLV:PTBL | pe_price |
+| TLV:PTBL | pe_price, published pe != stored pe |
 | TLV:PTCH | pe_price |
 | TLV:PTNR | pe_price |
 | TLV:QLTU | pe_price |
-| TLV:QNCO | pe_price |
+| TLV:QNCO | pe_price, published pe != stored pe |
 | TLV:RANI | pe_price |
 | TLV:RATI | pe_price |
 | TLV:RAVD | pe_price |
 | TLV:REKA | pe_price |
-| TLV:RGAS | pe_price |
+| TLV:RGAS | pe_price, published pe != stored pe |
 | TLV:RIMO | pe_price |
 | TLV:RIT1 | pe_price |
 | TLV:RLCO | pe_price |
@@ -1774,7 +1790,7 @@
 | TLV:RMON | pe_price |
 | TLV:ROTS | pe_price |
 | TLV:RPAC | pe_price |
-| TLV:RSEL | pe_price |
+| TLV:RSEL | pe_price, published pe != stored pe |
 | TLV:RTLS | pe_price |
 | TLV:RTSN | eps_shares, pe_price |
 | TLV:RVL | pe_price |
@@ -1784,26 +1800,26 @@
 | TLV:SCOP | pe_price |
 | TLV:SHAN | pe_price |
 | TLV:SHGR | pe_price |
-| TLV:SHNP | pe_price |
+| TLV:SHNP | pe_price, published pe != stored pe |
 | TLV:SHOM | pe_price |
 | TLV:SHVA | pe_price |
-| TLV:SKBN | pe_price |
+| TLV:SKBN | pe_price, published pe != stored pe |
 | TLV:SLARL | pe_price |
-| TLV:SLRM | pe_price |
+| TLV:SLRM | pe_price, published pe != stored pe |
 | TLV:SMNR | pe_price |
-| TLV:SMSH | eps_shares |
+| TLV:SMSH | eps_shares, ratios not page-overlaid |
 | TLV:SMT | pe_price |
 | TLV:SNCM | pe_price |
 | TLV:SOFW | pe_price |
 | TLV:SPEN | pe_price |
 | TLV:SPNTC | pe_price |
-| TLV:SRFT | pe_price |
+| TLV:SRFT | pe_price, published pe != stored pe |
 | TLV:STG | pe_price |
 | TLV:STRS | pe_price |
 | TLV:TATT | pe_price |
-| TLV:TAYA | pe_price |
+| TLV:TAYA | pe_price, published pe != stored pe |
 | TLV:TDRN | pe_price |
-| TLV:TFRLF | pe_price |
+| TLV:TFRLF | pe_price, published pe != stored pe |
 | TLV:TGI | pe_price |
 | TLV:TIGBUR | pe_price |
 | TLV:TLSY | neg_rev, pe_price |
@@ -1813,14 +1829,15 @@
 | TLV:TPGM | pe_price |
 | TLV:TRPZ | pe_price |
 | TLV:TRX | pe_price |
-| TLV:TSG | pe_price |
+| TLV:TSG | pe_price, published pe != stored pe |
 | TLV:TTAM | pe_price |
+| TLV:TURB | roa_impossible |
 | TLV:UMH | pe_price |
 | TLV:UNIT | pe_price |
 | TLV:VCTR | pe_price |
 | TLV:VILR | pe_price |
 | TLV:VTNA | pe_price |
-| TLV:WILC | pe_price |
+| TLV:WILC | pe_price, ratios not page-overlaid |
 | TLV:YBOX | pe_price |
 | TLV:YHNF | pe_price |
 | TLV:ZNKL | pe_price |
@@ -1837,7 +1854,7 @@
 | TOL | pe_price |
 | TOP | pe_price |
 | TOST | pe_price |
-| TOWN | pe_price |
+| TOWN | pe_price, published pe != stored pe |
 | TPB | pe_price |
 | TPG | eps_shares, pe_price |
 | TPL | pe_price |
@@ -1845,7 +1862,7 @@
 | TRGP | pe_price |
 | TRI | pe_price |
 | TRIN | pe_price |
-| TRIP | income, pe_price |
+| TRIP | income, pe_price, published pe != stored pe |
 | TRMD | pe_price |
 | TRMK | pe_price |
 | TRN | pe_price |
@@ -1863,7 +1880,7 @@
 | TTC | pe_price |
 | TTD | pe_price |
 | TTE | pe_price |
-| TTI | pe_price |
+| TTI | pe_price, published pe != stored pe |
 | TTMI | pe_price |
 | TU | pe_price |
 | TUYA | pe_price |
@@ -1879,7 +1896,7 @@
 | UAA | pe_price |
 | UAN | pe_price |
 | UBER | pe_price |
-| UBS | pe_price |
+| UBS | pe_price, published pe != stored pe |
 | UBSI | pe_price |
 | UCB | pe_price |
 | UDR | pe_price |
@@ -1887,9 +1904,9 @@
 | UFCS | pe_price |
 | UFPI | pe_price |
 | UGI | pe_price |
-| UGP | pe_price |
-| UHAL | pe_price |
-| UHAL.B | pe_price |
+| UGP | pe_price, published pe != stored pe |
+| UHAL | pe_price, published pe != stored pe |
+| UHAL.B | pe_price, published pe != stored pe |
 | UHS | pe_price |
 | UL | pe_price |
 | ULS | pe_price |
@@ -1898,15 +1915,15 @@
 | UMC | pe_price |
 | UMH | pe_price |
 | UNFI | pe_price |
-| UNIT | pe_price |
+| UNIT | pe_price, published pe != stored pe |
 | UNM | pe_price |
 | UNP | pe_price |
 | UPBD | pe_price |
 | UPS | pe_price |
 | UPST | pe_price |
 | UPWK | eps_shares, pe_price |
-| URBN | pe_price |
-| UROY | pe_price |
+| URBN | pe_price, published pe != stored pe |
+| UROY | pe_price, published pe != stored pe |
 | USAC | pe_price |
 | USB | pe_price |
 | USFD | pe_price |
@@ -1926,8 +1943,8 @@
 | VCTR | pe_price |
 | VCYT | pe_price |
 | VECO | pe_price |
-| VEON | pe_price |
-| VERX | eps_shares, pe_price |
+| VEON | pe_price, published pe != stored pe |
+| VERX | eps_shares, pe_price, published pe != stored pe |
 | VG | pe_price |
 | VIAV | pe_price |
 | VICI | pe_price |
@@ -1937,14 +1954,14 @@
 | VIRT | pe_price |
 | VISN | eps_shares, income, pe_price |
 | VIST | pe_price |
-| VIV | pe_price |
+| VIV | pe_price, published pe != stored pe |
 | VLO | pe_price |
 | VLY | pe_price |
 | VMET | pe_price |
-| VMRK | pe_price |
+| VMRK | pe_price, published pe != stored pe |
 | VNET | eps_shares, pe_price |
 | VNO | pe_price |
-| VNOM | pe_price |
+| VNOM | pe_price, published pe != stored pe |
 | VOD | pe_price |
 | VOYA | balance, pe_price |
 | VRT | pe_price |
@@ -1976,7 +1993,7 @@
 | WF | eps_shares, pe_price |
 | WFC | pe_price |
 | WHR | pe_price |
-| WINA | pe_price |
+| WINA | pe_price, roa_impossible |
 | WIT | pe_price |
 | WIX | pe_price |
 | WKC | pe_price |
@@ -1999,7 +2016,7 @@
 | WS | pe_price |
 | WSBC | pe_price |
 | WSC | pe_price |
-| WSE | pe_price |
+| WSE | pe_price, published pe != stored pe |
 | WSFS | pe_price |
 | WSM | pe_price |
 | WSO | pe_price |
@@ -2020,7 +2037,7 @@
 | XOM | pe_price |
 | XP | pe_price |
 | XPO | pe_price |
-| XPRO | income |
+| XPRO | income, published pe != stored pe |
 | XYL | pe_price |
 | XYZ | pe_price |
 | XZO | pe_price |
@@ -2041,3 +2058,49 @@
 | ZTO | pe_price |
 | ZTS | pe_price |
 | ZWS | pe_price |
+
+## WARN tickers (41)
+
+| ticker | issues |
+|---|---|
+| ADBT | published pe != stored pe |
+| AERO | published pe != stored pe |
+| AIIR | no statements |
+| ALGM | published pe != stored pe |
+| ALM | published pe != stored pe |
+| ASA | missing cash_flow |
+| AXTI | published pe != stored pe |
+| BST | no statements |
+| BTX | no statements |
+| BXDC | no statements |
+| CIG.C | published pe != stored pe |
+| CPRI | published pe != stored pe |
+| DSL | no statements |
+| FOIL | ratios not page-overlaid |
+| FSUN | published pe != stored pe |
+| FWONK | published pe != stored pe |
+| JMKE | ratios not page-overlaid |
+| KEYS | published pe != stored pe |
+| PBT | missing cash_flow |
+| PSUS | no statements |
+| SA | published pe != stored pe |
+| SBR | missing cash_flow |
+| TLV:ALRPR | published pe != stored pe |
+| TLV:AMAL | ratios not page-overlaid |
+| TLV:AVGD | published pe != stored pe |
+| TLV:BRKT | no statements |
+| TLV:DISI | published pe != stored pe |
+| TLV:DLAS | no statements |
+| TLV:ELRN | no statements |
+| TLV:ISCD | published pe != stored pe |
+| TLV:MNRV | ratios not page-overlaid |
+| TLV:OPCE | published pe != stored pe |
+| TLV:POLY | published pe != stored pe |
+| TLV:RENT | ratios not page-overlaid |
+| TLV:RPOL | ratios not page-overlaid |
+| TLV:SARN | ratios not page-overlaid |
+| TLV:SPGS | published pe != stored pe |
+| TLV:TDHR | ratios not page-overlaid |
+| TLV:WESR | published pe != stored pe |
+| TRS | published pe != stored pe |
+| WAT | published pe != stored pe |
