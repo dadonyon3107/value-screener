@@ -1,11 +1,11 @@
 # Data-quality tripwires
 
 - Tickers checked: 2973
-- Tickers flagged: 2026 (68.1%)
+- Tickers flagged: 2022 (68.0%)
 
 ## Failures by check
 
-- **pe_price** (1963) — the ratios file's PE disagrees with its own price and the statement EPS
+- **pe_price** (1958) — the ratios file's PE disagrees with its own price and the statement EPS
 - **eps_shares** (128) — EPS x shares != net income — share-basis mismatch (ADS vs ordinary)
 - **income** (42) — net income != pretax - tax (+ discontinued ops, minority interest)
 - **balance** (19) — total assets != liabilities + equity (balance sheet does not balance)
@@ -137,6 +137,7 @@
 | ARW | pe_price |
 | AS | pe_price |
 | ASB | pe_price |
+| ASH | pe_price |
 | ASIC | balance, pe_price |
 | ASM | pe_price |
 | ASML | pe_price |
@@ -612,7 +613,7 @@
 | FDX | pe_price |
 | FE | eps_shares |
 | FER | pe_price |
-| FERG | eps_shares, pe_price |
+| FERG | eps_shares |
 | FFBC | pe_price |
 | FFIN | pe_price |
 | FFIV | pe_price |
@@ -1364,7 +1365,6 @@
 | RVLV | pe_price |
 | RVTY | pe_price |
 | RXO | pe_price |
-| RY | pe_price |
 | RYAAY | pe_price |
 | RYAN | pe_price |
 | RYN | income, pe_price |
@@ -1446,7 +1446,6 @@
 | SNY | pe_price |
 | SOBO | pe_price |
 | SOFI | pe_price |
-| SOMN | pe_price |
 | SON | pe_price |
 | SONY | pe_price |
 | SOUN | eps_shares |
@@ -1755,7 +1754,6 @@
 | TLV:POLP | pe_price |
 | TLV:PRMG | pe_price |
 | TLV:PRSK | pe_price |
-| TLV:PRTC | pe_price |
 | TLV:PTBL | pe_price |
 | TLV:PTCH | pe_price |
 | TLV:PTNR | pe_price |
@@ -1787,7 +1785,6 @@
 | TLV:SHNP | pe_price |
 | TLV:SHOM | pe_price |
 | TLV:SHVA | pe_price |
-| TLV:SKBN | pe_price |
 | TLV:SLARL | pe_price |
 | TLV:SLRM | pe_price |
 | TLV:SMNR | pe_price |
@@ -1801,7 +1798,6 @@
 | TLV:STG | pe_price |
 | TLV:STRS | pe_price |
 | TLV:TATT | pe_price |
-| TLV:TAYA | pe_price |
 | TLV:TDRN | pe_price |
 | TLV:TFRLF | pe_price |
 | TLV:TGI | pe_price |
