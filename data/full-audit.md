@@ -1,10 +1,10 @@
 # Full-universe data audit
 
 - Generated: 2026-09-02
-- Tickers audited: **2985**
-- **OK: 2489** (83.4%)
-- **WARN: 156** (5.2%)
-- **FAIL: 340** (11.4%)
+- Tickers audited: **2898**
+- **OK: 2443** (84.3%)
+- **WARN: 128** (4.4%)
+- **FAIL: 327** (11.3%)
 
 A FAIL means the ticker's own numbers contradict each other, so at least one
 is wrong. A WARN is a soft issue - stale vintage, or a check that could not run.
@@ -14,18 +14,17 @@ An OK means every identity holds and the per-year ratios match the site's page.
 
 | issue | tickers | meaning |
 |---|---|---|
-| published pe != stored pe | 207 | latest.json disagrees with the stored CSV |
-| pe_price | 184 | the ratios file's PE disagrees with its own price and the statement EPS |
-| eps_shares | 128 | EPS x shares != net income — share-basis mismatch (ADS vs ordinary) |
-| income | 42 | net income != pretax - tax (+ discontinued ops, minority interest) |
+| published pe != stored pe | 186 | latest.json disagrees with the stored CSV |
+| pe_price | 174 | the ratios file's PE disagrees with its own price and the statement EPS |
+| eps_shares | 127 | EPS x shares != net income — share-basis mismatch (ADS vs ordinary) |
+| income | 41 | net income != pretax - tax (+ discontinued ops, minority interest) |
 | balance | 19 | total assets != liabilities + equity (balance sheet does not balance) |
-| ratios not page-overlaid | 13 | still on CSV-export values, not the site's page values |
 | no statements | 9 | - |
-| roa_impossible | 9 | return on assets above 100% - recomputed off a broken export |
+| roa_impossible | 7 | return on assets above 100% - recomputed off a broken export |
 | neg_rev | 3 | negative revenue |
 | missing cash_flow | 3 | - |
 
-## FAIL tickers (340)
+## FAIL tickers (327)
 
 | ticker | issues |
 |---|---|
@@ -73,9 +72,7 @@ An OK means every identity holds and the per-year ratios match the site's page.
 | BMNR | eps_shares, income, pe_price |
 | BNT | eps_shares, published pe != stored pe |
 | BRAI | eps_shares, roa_impossible |
-| BRBI | pe_price, published pe != stored pe |
 | BRK.A | pe_price |
-| BRK.B | pe_price |
 | BRSL | pe_price, published pe != stored pe |
 | BSAC | eps_shares |
 | BTDR | eps_shares |
@@ -174,12 +171,10 @@ An OK means every identity holds and the per-year ratios match the site's page.
 | IE | eps_shares |
 | IESC | pe_price |
 | IHS | income, published pe != stored pe |
-| IMC | roa_impossible |
 | IMCR | eps_shares |
 | IMOS | pe_price, published pe != stored pe |
 | INDV | pe_price |
 | INFQ | eps_shares |
-| INFY | pe_price |
 | ING | pe_price |
 | INNV | eps_shares |
 | INVX | pe_price |
@@ -221,7 +216,7 @@ An OK means every identity holds and the per-year ratios match the site's page.
 | MUX | eps_shares |
 | NAT | pe_price, published pe != stored pe |
 | NBR | eps_shares |
-| NTES | income |
+| NTES | pe_price |
 | NTRS | income |
 | NWG | income |
 | NXT | pe_price |
@@ -295,14 +290,12 @@ An OK means every identity holds and the per-year ratios match the site's page.
 | TLN | eps_shares |
 | TLV:ACRO | pe_price, published pe != stored pe |
 | TLV:ALMA | pe_price |
-| TLV:ARAN | pe_price, published pe != stored pe |
 | TLV:ARF | eps_shares, pe_price, published pe != stored pe |
 | TLV:ASHO | pe_price, published pe != stored pe |
 | TLV:BLEG | eps_shares |
 | TLV:BVC | eps_shares, published pe != stored pe |
 | TLV:CILO | pe_price, published pe != stored pe |
 | TLV:CMDR | pe_price, published pe != stored pe |
-| TLV:CRML | pe_price |
 | TLV:DLEKG | pe_price, published pe != stored pe |
 | TLV:EFCP | pe_price, published pe != stored pe |
 | TLV:ELAD | pe_price, published pe != stored pe |
@@ -310,13 +303,9 @@ An OK means every identity holds and the per-year ratios match the site's page.
 | TLV:ELLO | eps_shares |
 | TLV:ENOG | pe_price |
 | TLV:GAON | pe_price, published pe != stored pe |
-| TLV:GIVO | roa_impossible |
-| TLV:GOHO | pe_price |
 | TLV:HRON | pe_price, published pe != stored pe |
 | TLV:IBIU | pe_price, published pe != stored pe |
 | TLV:ICHO | pe_price |
-| TLV:IMCO | eps_shares, pe_price |
-| TLV:LUDN | pe_price |
 | TLV:LURO | eps_shares, pe_price |
 | TLV:MISH | pe_price, published pe != stored pe |
 | TLV:MLRN | eps_shares |
@@ -324,18 +313,15 @@ An OK means every identity holds and the per-year ratios match the site's page.
 | TLV:NVPT | pe_price |
 | TLV:ORIN | neg_rev, pe_price |
 | TLV:POLP | pe_price, published pe != stored pe |
-| TLV:PRMG | pe_price, published pe != stored pe |
 | TLV:PTCH | pe_price |
 | TLV:RIMO | pe_price |
-| TLV:RLCO | pe_price |
 | TLV:RTSN | eps_shares |
-| TLV:SLRM | pe_price, published pe != stored pe |
-| TLV:SMSH | eps_shares, ratios not page-overlaid |
+| TLV:SMSH | eps_shares |
 | TLV:TLSY | neg_rev, pe_price, published pe != stored pe |
 | TLV:TOEN | balance |
 | TLV:TSG | pe_price, published pe != stored pe |
 | TLV:TURB | roa_impossible |
-| TLV:WILC | pe_price, ratios not page-overlaid |
+| TLV:WILC | pe_price |
 | TMC | eps_shares |
 | TPG | eps_shares, pe_price |
 | TRIN | pe_price |
@@ -370,7 +356,7 @@ An OK means every identity holds and the per-year ratios match the site's page.
 | ZGN | eps_shares |
 | ZIM | pe_price |
 
-## WARN tickers (156)
+## WARN tickers (128)
 
 | ticker | issues |
 |---|---|
@@ -411,7 +397,6 @@ An OK means every identity holds and the per-year ratios match the site's page.
 | ESE | published pe != stored pe |
 | ETSY | published pe != stored pe |
 | FLO | published pe != stored pe |
-| FOIL | ratios not page-overlaid |
 | FRO | published pe != stored pe |
 | FSUN | published pe != stored pe |
 | FTV | published pe != stored pe |
@@ -424,7 +409,6 @@ An OK means every identity holds and the per-year ratios match the site's page.
 | HZO | published pe != stored pe |
 | ICLR | published pe != stored pe |
 | JCI | published pe != stored pe |
-| JMKE | ratios not page-overlaid |
 | KEYS | published pe != stored pe |
 | MGRT | published pe != stored pe |
 | MIR | published pe != stored pe |
@@ -462,14 +446,9 @@ An OK means every identity holds and the per-year ratios match the site's page.
 | TLV:ACKR | published pe != stored pe |
 | TLV:ALMY | published pe != stored pe |
 | TLV:ALRPR | published pe != stored pe |
-| TLV:AMAL | ratios not page-overlaid |
-| TLV:AMRM | ratios not page-overlaid |
 | TLV:ARYT | published pe != stored pe |
 | TLV:ASGR | published pe != stored pe |
 | TLV:ASHG | published pe != stored pe |
-| TLV:AVGD | published pe != stored pe |
-| TLV:AVIV | published pe != stored pe |
-| TLV:BIRM | published pe != stored pe |
 | TLV:BKFR | published pe != stored pe |
 | TLV:BLGO | published pe != stored pe |
 | TLV:BLSR | published pe != stored pe |
@@ -478,48 +457,27 @@ An OK means every identity holds and the per-year ratios match the site's page.
 | TLV:CNGL | published pe != stored pe |
 | TLV:DISI | published pe != stored pe |
 | TLV:DLAS | no statements |
-| TLV:DRSL | ratios not page-overlaid |
 | TLV:ELCO | published pe != stored pe |
 | TLV:ELMR | published pe != stored pe |
 | TLV:ELRN | no statements |
-| TLV:GKL | published pe != stored pe |
-| TLV:GLTL | published pe != stored pe |
 | TLV:GNRS | published pe != stored pe |
 | TLV:GOSS | published pe != stored pe |
 | TLV:HAMAT | published pe != stored pe |
-| TLV:INTR | published pe != stored pe |
 | TLV:ISCD | published pe != stored pe |
 | TLV:ISCN | published pe != stored pe |
 | TLV:KRUR | published pe != stored pe |
 | TLV:LUZN | published pe != stored pe |
-| TLV:MDPR | published pe != stored pe |
 | TLV:MGDO | published pe != stored pe |
 | TLV:MGRT | published pe != stored pe |
-| TLV:MNRV | ratios not page-overlaid |
-| TLV:MRG | published pe != stored pe |
-| TLV:MSLA | published pe != stored pe |
-| TLV:MTRD | ratios not page-overlaid |
 | TLV:NXSN | published pe != stored pe |
 | TLV:OPCE | published pe != stored pe |
-| TLV:POLY | published pe != stored pe |
 | TLV:PTBL | published pe != stored pe |
-| TLV:QNCO | published pe != stored pe |
-| TLV:RENT | ratios not page-overlaid |
 | TLV:RGAS | published pe != stored pe |
-| TLV:RPOL | ratios not page-overlaid |
-| TLV:RSEL | published pe != stored pe |
-| TLV:SARN | ratios not page-overlaid |
-| TLV:SHNP | published pe != stored pe |
 | TLV:SKBN | published pe != stored pe |
 | TLV:SPGS | published pe != stored pe |
-| TLV:STG | published pe != stored pe |
-| TLV:TAYA | published pe != stored pe |
-| TLV:TDHR | ratios not page-overlaid |
-| TLV:TFRLF | published pe != stored pe |
 | TLV:WESR | published pe != stored pe |
 | TOWN | published pe != stored pe |
 | TRS | published pe != stored pe |
-| TTI | published pe != stored pe |
 | UBS | published pe != stored pe |
 | UGP | published pe != stored pe |
 | UNIT | published pe != stored pe |

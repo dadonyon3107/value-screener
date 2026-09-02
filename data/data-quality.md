@@ -1,13 +1,13 @@
 # Data-quality tripwires
 
-- Tickers checked: 2973
-- Tickers flagged: 334 (11.2%)
+- Tickers checked: 2886
+- Tickers flagged: 314 (10.9%)
 
 ## Failures by check
 
-- **pe_price** (184) — the ratios file's PE disagrees with its own price and the statement EPS
-- **eps_shares** (128) — EPS x shares != net income — share-basis mismatch (ADS vs ordinary)
-- **income** (42) — net income != pretax - tax (+ discontinued ops, minority interest)
+- **pe_price** (166) — the ratios file's PE disagrees with its own price and the statement EPS
+- **eps_shares** (127) — EPS x shares != net income — share-basis mismatch (ADS vs ordinary)
+- **income** (41) — net income != pretax - tax (+ discontinued ops, minority interest)
 - **balance** (19) — total assets != liabilities + equity (balance sheet does not balance)
 - **neg_rev** (3) — negative revenue
 
@@ -39,7 +39,6 @@
 | AVAL | eps_shares, pe_price |
 | AVEX | eps_shares |
 | AVTX | eps_shares |
-| AZN | pe_price |
 | BAM | pe_price |
 | BANC | income |
 | BBAR | eps_shares |
@@ -58,9 +57,7 @@
 | BMNR | eps_shares, income, pe_price |
 | BNT | eps_shares |
 | BRAI | eps_shares |
-| BRBI | pe_price |
 | BRK.A | pe_price |
-| BRK.B | pe_price |
 | BRSL | pe_price |
 | BSAC | eps_shares |
 | BTDR | eps_shares |
@@ -157,13 +154,10 @@
 | HTGC | pe_price |
 | ICUI | eps_shares |
 | IE | eps_shares |
-| IESC | pe_price |
 | IHS | income |
 | IMCR | eps_shares |
-| IMOS | pe_price |
 | INDV | pe_price |
 | INFQ | eps_shares |
-| INFY | pe_price |
 | ING | pe_price |
 | INNV | eps_shares |
 | INVX | pe_price |
@@ -174,10 +168,8 @@
 | JCAP | pe_price |
 | KEEL | income |
 | KEN | income |
-| KEP | pe_price |
 | KNTK | eps_shares, pe_price |
 | KRP | pe_price |
-| KT | pe_price |
 | KTOS | eps_shares |
 | KYIV | income, pe_price |
 | LB | eps_shares, pe_price |
@@ -205,14 +197,12 @@
 | MUX | eps_shares |
 | NAT | pe_price |
 | NBR | eps_shares |
-| NTES | income |
 | NTRS | income |
 | NWG | income |
 | NXT | pe_price |
 | OCSL | pe_price |
 | OKE | pe_price |
 | OKTA | eps_shares, pe_price |
-| PAM | pe_price |
 | PANW | pe_price |
 | PBR | eps_shares, pe_price |
 | PBR.A | pe_price |
@@ -221,7 +211,6 @@
 | PEN | eps_shares |
 | PENG | eps_shares |
 | PGEN | eps_shares |
-| PKX | pe_price |
 | PNFP | pe_price |
 | PPTA | eps_shares |
 | PR | pe_price |
@@ -246,7 +235,6 @@
 | RUSHB | pe_price |
 | RYN | income |
 | SID | eps_shares |
-| SIG | pe_price |
 | SIRI | pe_price |
 | SLBT | eps_shares |
 | SLSR | eps_shares |
@@ -278,14 +266,12 @@
 | TLN | eps_shares |
 | TLV:ACRO | pe_price |
 | TLV:ALMA | pe_price |
-| TLV:ARAN | pe_price |
 | TLV:ARF | eps_shares, pe_price |
 | TLV:ASHO | pe_price |
 | TLV:BLEG | eps_shares |
 | TLV:BVC | eps_shares |
 | TLV:CILO | pe_price |
 | TLV:CMDR | pe_price |
-| TLV:CRML | pe_price |
 | TLV:DLEKG | pe_price |
 | TLV:EFCP | pe_price |
 | TLV:ELAD | pe_price |
@@ -293,12 +279,9 @@
 | TLV:ELLO | eps_shares |
 | TLV:ENOG | pe_price |
 | TLV:GAON | pe_price |
-| TLV:GOHO | pe_price |
 | TLV:HRON | pe_price |
 | TLV:IBIU | pe_price |
 | TLV:ICHO | pe_price |
-| TLV:IMCO | eps_shares, pe_price |
-| TLV:LUDN | pe_price |
 | TLV:LURO | eps_shares, pe_price |
 | TLV:MISH | pe_price |
 | TLV:MLRN | eps_shares |
@@ -306,12 +289,9 @@
 | TLV:NVPT | pe_price |
 | TLV:ORIN | neg_rev, pe_price |
 | TLV:POLP | pe_price |
-| TLV:PRMG | pe_price |
 | TLV:PTCH | pe_price |
 | TLV:RIMO | pe_price |
-| TLV:RLCO | pe_price |
 | TLV:RTSN | eps_shares |
-| TLV:SLRM | pe_price |
 | TLV:SMSH | eps_shares |
 | TLV:TLSY | neg_rev, pe_price |
 | TLV:TOEN | balance |
@@ -339,7 +319,7 @@
 | VOYA | balance |
 | VSAT | income |
 | VTOL | income |
-| WF | eps_shares |
+| WF | eps_shares, pe_price |
 | WMG | eps_shares |
 | WRBY | pe_price |
 | WT | balance |
