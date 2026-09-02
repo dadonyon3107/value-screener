@@ -1,82 +1,98 @@
 # Verification against stockanalysis.com
 
-- Tickers sampled: **91**
-- Values compared: **63,261**
-- **Matching the site: 40,382 (63.83%)**
-- Mismatched: 22,879
-- Per-share rows on the ADS basis (expected, see header): 69
-- Present one side only: 3,326
+- Tickers sampled: **120** (random, proportional to the universe)
+- Values compared: **102,423**
+- **Agree with the site: 82,851 (80.89%)**
+  - identical: 72,624
+  - within 5% (exchange-rate drift / rounding): 10,171
+  - native currency, correctly converted by the builder: 6
+  - per-share on ADS basis (by decision): 50
+- **Genuine mismatches: 19,572 (19.11%)**
+- Present one side only: 3,820
+- **Tickers with zero genuine mismatches: 0/120**
 
 ## By statement
 
-| statement | matched | mismatched | match rate |
+| statement | agree | genuine mismatches | agreement |
 |---|---|---|---|
-| income_statement | 9,876 | 7,418 | 57.11% |
-| balance_sheet | 7,018 | 9,187 | 43.31% |
-| cash_flow | 5,465 | 5,789 | 48.56% |
-| ratios | 18,023 | 485 | 97.38% |
+| income_statement | 20,357 | 6,052 | 77.08% |
+| balance_sheet | 17,914 | 7,704 | 69.93% |
+| cash_flow | 14,503 | 5,598 | 72.15% |
+| ratios | 30,077 | 218 | 99.28% |
 
-## Tickers with mismatches
+## Genuine mismatches
 
 | ticker | statement | cells | examples |
 |---|---|---|---|
-| INFY | balance_sheet | 269 | Cash & Equivalents 2026-03-31: stored 222010.0 vs site 2341.0; Cash & Equivalents 2025-03-31: stored 244525.0 vs site 2861.0; Cash & Equivalents 2024-03-31: stored 147806.0 vs site 1773.0; Cash & Equivalents 2023-03-31: stored 121710.0 vs site 1481.0 |
-| TLV:SCOP | balance_sheet | 211 | Cash & Equivalents 2025-12-31: stored 142.0 vs site 139.9; Cash & Equivalents 2024-12-31: stored 79.0 vs site 77.55; Cash & Equivalents 2023-12-31: stored 97.0 vs site 95.74; Cash & Equivalents 2022-12-31: stored 151.0 vs site 148.43 |
-| TLV:BEZQ | balance_sheet | 205 | Cash & Equivalents 2025-12-31: stored 216.0 vs site 212.6; Cash & Equivalents 2024-12-31: stored 263.0 vs site 259.22; Cash & Equivalents 2023-12-31: stored 189.0 vs site 186.15; Cash & Equivalents 2022-12-31: stored 249.0 vs site 245.0 |
-| TLV:HAMAT | balance_sheet | 200 | Cash & Equivalents 2025-12-31: stored 9.0 vs site 8.47; Cash & Equivalents 2024-12-31: stored 4.0 vs site 4.09; Cash & Equivalents 2023-12-31: stored 11.0 vs site 10.83; Cash & Equivalents 2022-12-31: stored 18.0 vs site 17.28 |
-| INFY | income_statement | 199 | Revenue 2026-03-31: stored 1884462.0 vs site 20158.0; Revenue 2025-03-31: stored 1647573.0 vs site 19277.0; Revenue 2024-03-31: stored 1547422.0 vs site 18562.0; Revenue 2023-03-31: stored 1496676.0 vs site 18212.0 |
-| TLV:AVIV | balance_sheet | 198 | Cash & Equivalents 2024-12-31: stored 17.0 vs site 16.44; Cash & Equivalents 2023-12-31: stored 3.0 vs site 2.86; Cash & Equivalents 2020-12-31: stored 6.0 vs site 6.23; Cash & Equivalents 2019-12-31: stored 8.0 vs site 7.89 |
-| TLV:ISTA | balance_sheet | 194 | Cash & Equivalents 2025-12-31: stored 61.0 vs site 59.72; Cash & Equivalents 2024-12-31: stored 12.0 vs site 12.28; Cash & Equivalents 2021-12-31: stored 31.0 vs site 30.18; Cash & Equivalents 2017-12-31: stored 14.0 vs site 13.4 |
-| TLV:SRFT | balance_sheet | 192 | Cash & Equivalents 2025-12-31: stored 17.0 vs site 16.43; Cash & Equivalents 2024-12-31: stored 11.0 vs site 10.36; Cash & Equivalents 2023-12-31: stored 22.0 vs site 21.62; Cash & Equivalents 2022-12-31: stored 46.0 vs site 45.18 |
-| INFY | cash_flow | 192 | Net Income 2026-03-31: stored 294740.0 vs site 3313.0; Net Income 2025-03-31: stored 270251.0 vs site 3158.0; Net Income 2024-03-31: stored 264184.0 vs site 3167.0; Net Income 2023-03-31: stored 245145.0 vs site 2981.0 |
-| TLV:ORON | balance_sheet | 185 | Cash & Equivalents 2025-12-31: stored 51.0 vs site 44.26; Cash & Equivalents 2024-12-31: stored 35.0 vs site 34.04; Cash & Equivalents 2023-12-31: stored 36.0 vs site 35.24; Cash & Equivalents 2022-12-31: stored 39.0 vs site 38.52 |
-| TLV:TAYA | balance_sheet | 185 | Cash & Equivalents 2025-12-31: stored 6.0 vs site 6.37; Cash & Equivalents 2023-12-31: stored 3.0 vs site 2.82; Cash & Equivalents 2022-12-31: stored 9.0 vs site 8.55; Cash & Equivalents 2021-12-31: stored 8.0 vs site 8.12 |
-| TLV:BEZQ | income_statement | 183 | Revenue 2025-12-31: stored 2924.0 vs site 2877.0; Revenue 2024-12-31: stored 2985.0 vs site 2937.0; Revenue 2023-12-31: stored 3058.0 vs site 3010.0; Revenue 2022-12-31: stored 3034.0 vs site 2971.0 |
-| TLV:BRMG | balance_sheet | 182 | Cash & Equivalents 2025-12-31: stored 3.0 vs site 2.73; Cash & Equivalents 2024-12-31: stored 3.0 vs site 2.92; Cash & Equivalents 2023-12-31: stored 5.0 vs site 4.66; Cash & Equivalents 2022-12-31: stored 3.0 vs site 2.63 |
-| TLV:SANO1 | balance_sheet | 181 | Cash & Equivalents 2025-12-31: stored 99.0 vs site 97.4; Cash & Equivalents 2024-12-31: stored 121.0 vs site 118.63; Cash & Equivalents 2023-12-31: stored 176.0 vs site 172.87; Cash & Equivalents 2022-12-31: stored 110.0 vs site 108.28 |
-| TLV:ORON | income_statement | 175 | Revenue 2025-12-31: stored 686.0 vs site 675.23; Revenue 2024-12-31: stored 625.0 vs site 615.01; Revenue 2023-12-31: stored 510.0 vs site 502.15; Revenue 2022-12-31: stored 406.0 vs site 186.84 |
-| TLV:BRND | balance_sheet | 173 | Cash & Equivalents 2025-12-31: stored 23.0 vs site 18.36; Cash & Equivalents 2023-12-31: stored 7.0 vs site 6.54; Cash & Equivalents 2022-12-31: stored 4.0 vs site 4.27; Cash & Equivalents 2021-12-31: stored 5.0 vs site 5.28 |
-| TLV:ORAD | balance_sheet | 170 | Cash & Equivalents 2025-12-31: stored 1.0 vs site 0.9; Cash & Equivalents 2024-12-31: stored 1.0 vs site 1.39; Cash & Equivalents 2023-12-31: stored 1.0 vs site 1.15; Cash & Equivalents 2022-12-31: stored 2.0 vs site 2.33 |
-| TLV:ACCL | balance_sheet | 168 | Cash & Equivalents 2024-12-31: stored 8.0 vs site 7.65; Cash & Equivalents 2023-12-31: stored 3.0 vs site 3.43; Cash & Equivalents 2022-12-31: stored 7.0 vs site 6.76; Cash & Equivalents 2021-12-31: stored 10.0 vs site 9.64 |
-| AEG | income_statement | 166 | Revenue Growth 2025-12-31: stored -1.25 vs site -5.09; Revenue Growth 2024-12-31: stored 2.73 vs site -0.66; Revenue Growth 2023-12-31: stored -12.03 vs site -9.48; Revenue Growth 2022-12-31: stored -68.12 vs site -69.28 |
-| TLV:DIPL | balance_sheet | 160 | Cash & Equivalents 2024-12-31: stored 26.0 vs site 25.66; Cash & Equivalents 2023-12-31: stored 27.0 vs site 26.32; Cash & Equivalents 2022-12-31: stored 35.0 vs site 34.04; Cash & Equivalents 2021-12-31: stored 25.0 vs site 24.6 |
-| TLV:SCOP | income_statement | 159 | Revenue 2025-12-31: stored 696.0 vs site 684.48; Revenue 2024-12-31: stored 606.0 vs site 596.41; Revenue 2023-12-31: stored 550.0 vs site 541.51; Revenue 2022-12-31: stored 553.0 vs site 544.62 |
-| TLV:ISTA | income_statement | 159 | Revenue 2025-12-31: stored 197.0 vs site 194.03; Revenue 2024-12-31: stored 140.0 vs site 138.02; Revenue 2023-12-31: stored 136.0 vs site 134.29; Revenue 2022-12-31: stored 125.0 vs site 122.65 |
-| TLV:KLIL | balance_sheet | 158 | Cash & Equivalents 2025-12-31: stored 23.0 vs site 22.68; Cash & Equivalents 2023-12-31: stored 20.0 vs site 19.64; Cash & Equivalents 2021-12-31: stored 17.0 vs site 16.76; Cash & Equivalents 2020-12-31: stored 30.0 vs site 29.38 |
-| TLV:MGOR | balance_sheet | 157 | Property, Plant & Equipment 2025-12-31: stored 2.0 vs site 2228.0; Property, Plant & Equipment 2024-12-31: stored 2.0 vs site 1786.0; Property, Plant & Equipment 2023-12-31: stored 1499.0 vs site 1476.0; Property, Plant & Equipment 2022-12-31: stored 14.0 vs site 1188.0 |
-| TLV:ACRO | income_statement | 157 | Revenue 2025-12-31: stored 205.0 vs site 217.04; Revenue 2023-12-31: stored 302.0 vs site 298.4; Revenue 2022-12-31: stored 291.0 vs site 306.01; Revenue 2021-12-31: stored 161.0 vs site 177.52 |
-| TLV:ACCL | income_statement | 156 | Revenue 2025-12-31: stored 150.0 vs site 147.68; Revenue 2024-12-31: stored 121.0 vs site 119.49; Revenue 2023-12-31: stored 92.0 vs site 90.74; Revenue 2022-12-31: stored 70.0 vs site 68.87 |
-| TLV:DIPL | income_statement | 155 | Revenue 2025-12-31: stored 1261.0 vs site 1241.0; Revenue 2024-12-31: stored 1195.0 vs site 1176.0; Revenue 2023-12-31: stored 1133.0 vs site 1115.0; Revenue 2022-12-31: stored 977.0 vs site 961.81 |
-| TLV:ELWS | balance_sheet | 153 | Cash & Equivalents 2025-12-31: stored 8.0 vs site 7.45; Cash & Equivalents 2023-12-31: stored 18.0 vs site 17.8; Cash & Equivalents 2022-12-31: stored 23.0 vs site 22.35; Cash & Equivalents 2021-12-31: stored 42.0 vs site 41.13 |
-| IP | income_statement | 152 | Gross Profit 2024-12-31: stored 4438.0 vs site 4515.0; Selling, General & Admin 2025-12-31: stored 4260.0 vs site 3828.0; Selling, General & Admin 2024-12-31: stored 3002.0 vs site 2713.0; Selling, General & Admin 2023-12-31: stored 2624.0 vs site 2551.0 |
-| TLV:ARPT | balance_sheet | 151 | Property, Plant & Equipment 2025-12-31: stored 106.0 vs site 26.41; Property, Plant & Equipment 2023-12-31: stored 28.0 vs site 27.49; Property, Plant & Equipment 2022-12-31: stored 24.0 vs site 23.23; Property, Plant & Equipment 2021-12-31: stored 23.0 vs site 22.53 |
-| TLV:SANO1 | income_statement | 149 | Revenue 2025-12-31: stored 753.0 vs site 740.53; Revenue 2024-12-31: stored 764.0 vs site 751.84; Revenue 2023-12-31: stored 715.0 vs site 704.07; Revenue 2022-12-31: stored 643.0 vs site 632.37 |
-| TLV:SHVA | balance_sheet | 149 | Cash & Equivalents 2025-12-31: stored 5.0 vs site 5.14; Cash & Equivalents 2024-12-31: stored 15.0 vs site 14.56; Cash & Equivalents 2023-12-31: stored 6.0 vs site 5.9; Cash & Equivalents 2022-12-31: stored 13.0 vs site 12.54 |
-| TLV:ACRO | balance_sheet | 148 | Cash & Equivalents 2025-12-31: stored 173.0 vs site 168.22; Cash & Equivalents 2024-12-31: stored 144.0 vs site 142.05; Cash & Equivalents 2023-12-31: stored 156.0 vs site 153.72; Cash & Equivalents 2022-12-31: stored 153.0 vs site 150.35 |
-| TLV:SRFT | income_statement | 146 | Revenue 2025-12-31: stored 137.0 vs site 135.16; Revenue 2024-12-31: stored 162.0 vs site 159.19; Revenue 2023-12-31: stored 100.0 vs site 97.45; Revenue 2022-12-31: stored 158.0 vs site 155.24 |
-| AN | balance_sheet | 146 | Accounts Receivable 2025-12-31: stored 948.0 vs site 424.0; Accounts Receivable 2024-12-31: stored 1066.0 vs site 452.7; Accounts Receivable 2023-12-31: stored 1040.0 vs site 434.7; Accounts Receivable 2022-12-31: stored 859.0 vs site 357.0 |
-| TLV:LUMI | balance_sheet | 145 | Cash & Equivalents 2025-12-31: stored 44317.0 vs site 49055.0; Cash & Equivalents 2024-12-31: stored 52355.0 vs site 48461.0; Cash & Equivalents 2023-12-31: stored 34428.0 vs site 33880.0; Cash & Equivalents 2022-12-31: stored 60691.0 vs site 59724.0 |
-| E | income_statement | 144 | Revenue Growth 2019-12-31: stored -7.66 vs site -7.32; Revenue Growth 2018-12-31: stored 8.4 vs site 12.99; Revenue Growth 2016-12-31: stored -22.91 vs site -21.59; Cost of Revenue 2019-12-31: stored 69561.0 vs site 58383.0 |
-| TLV:HAMAT | income_statement | 143 | Revenue 2025-12-31: stored 321.0 vs site 315.47; Revenue 2024-12-31: stored 298.0 vs site 293.29; Revenue 2023-12-31: stored 325.0 vs site 319.84; Revenue 2022-12-31: stored 357.0 vs site 351.49 |
-| INDV | income_statement | 143 | Cost of Revenue 2025-12-31: stored 246.0 vs site 198.0; Cost of Revenue 2024-12-31: stored 231.0 vs site 190.0; Cost of Revenue 2021-12-31: stored -127.0 vs site 127.0; Cost of Revenue 2020-12-31: stored -97.0 vs site 92.0 |
-| TLV:BRMG | income_statement | 142 | Revenue 2025-12-31: stored 145.0 vs site 142.38; Revenue 2024-12-31: stored 135.0 vs site 133.17; Revenue 2023-12-31: stored 156.0 vs site 153.07; Revenue 2022-12-31: stored 174.0 vs site 170.8 |
-| TLV:ELAL | income_statement | 141 | Revenue 2025-12-31: stored 3763.0 vs site 3476.0; Revenue Growth 2025-12-31: stored 9.64 vs site 1.28; Cost of Revenue 2025-12-31: stored 2400.0 vs site 2191.0; Cost of Revenue 2024-12-31: stored 2469.0 vs site 1996.0 |
-| TLV:AYAL | income_statement | 140 | Revenue Growth 2025-12-31: stored 26.84 vs site 9.13; Revenue Growth 2024-12-31: stored 19.32 vs site 59.18; Revenue Growth 2023-12-31: stored 55.79 vs site 59.82; Revenue Growth 2021-12-31: stored 26.68 vs site 24.41 |
-| TLV:ICON | income_statement | 140 | Revenue 2025-12-31: stored 544.0 vs site 535.33; Revenue 2024-12-31: stored 537.0 vs site 528.14; Revenue 2023-12-31: stored 485.0 vs site 477.46; Revenue 2022-12-31: stored 511.0 vs site 502.87 |
-| TLV:FIBIH | balance_sheet | 139 | Cash & Equivalents 2025-12-31: stored 26382.0 vs site 27489.0; Cash & Equivalents 2024-12-31: stored 25932.0 vs site 25431.0; Cash & Equivalents 2023-12-31: stored 23140.0 vs site 22339.0; Cash & Equivalents 2022-12-31: stored 19197.0 vs site 18327.0 |
-| TLV:AYAL | balance_sheet | 139 | Cash & Equivalents 2025-12-31: stored 284.0 vs site 153.49; Cash & Equivalents 2024-12-31: stored 251.0 vs site 206.71; Cash & Equivalents 2023-12-31: stored 138.0 vs site 179.52; Cash & Equivalents 2022-12-31: stored 245.0 vs site 151.28 |
-| TLV:BEZQ | cash_flow | 138 | Net Income 2025-12-31: stored 476.0 vs site 468.51; Net Income 2024-12-31: stored 360.0 vs site 354.44; Net Income 2023-12-31: stored 399.0 vs site 393.12; Net Income 2022-12-31: stored 336.0 vs site 330.63 |
-| JHX | balance_sheet | 137 | Cash & Equivalents 2026-03-31: stored 344.0 vs site 269.2; Cash & Equivalents 2025-03-31: stored 606.0 vs site 562.7; Cash & Equivalents 2024-03-31: stored 416.0 vs site 365.0; Cash & Equivalents 2023-03-31: stored 186.0 vs site 113.0 |
-| APPS | balance_sheet | 137 | Cash & Equivalents 2025-03-31: stored 40.0 vs site 39.39; Cash & Equivalents 2024-03-31: stored 34.0 vs site 33.61; Cash & Equivalents 2022-03-31: stored 0.0 vs site 126.77; Cash & Equivalents 2021-03-31: stored 0.0 vs site 30.78 |
-| TLV:ORAD | income_statement | 136 | Revenue 2025-12-31: stored 68.0 vs site 66.96; Revenue 2024-12-31: stored 61.0 vs site 60.25; Revenue 2022-12-31: stored 57.0 vs site 56.11; Revenue 2020-12-31: stored 49.0 vs site 48.22 |
-| TLV:FIBIH | cash_flow | 134 | Net Income 2025-12-31: stored 366.0 vs site 360.06; Net Income 2024-12-31: stored 384.0 vs site 377.91; Net Income 2023-12-31: stored 352.0 vs site 346.17; Net Income 2022-12-31: stored 269.0 vs site 569.35 |
-| TLV:KLIL | income_statement | 134 | Revenue 2025-12-31: stored 128.0 vs site 126.16; Revenue 2024-12-31: stored 105.0 vs site 103.71; Revenue 2023-12-31: stored 126.0 vs site 124.21; Revenue 2022-12-31: stored 153.0 vs site 150.1 |
-| NVR | balance_sheet | 131 | Cash & Equivalents 2025-12-31: stored 1916.0 vs site 1884.0; Cash & Equivalents 2024-12-31: stored 2611.0 vs site 2561.0; Cash & Equivalents 2023-12-31: stored 3163.0 vs site 3126.0; Cash & Equivalents 2020-12-31: stored 2778.0 vs site 2715.0 |
-| TK | balance_sheet | 130 | Cash Growth 2019-12-31: stored -16.72 vs site -17.22; Cash Growth 2018-12-31: stored -4.78 vs site -4.19; Accounts Receivable 2025-12-31: stored 83.0 vs site 135.17; Accounts Receivable 2024-12-31: stored 83.0 vs site 140.92 |
-| PBT | balance_sheet | 130 | Cash & Equivalents 2025-12-31: stored 2.0 vs site 1.72; Cash & Equivalents 2024-12-31: stored 2.0 vs site 2.12; Cash & Equivalents 2022-12-31: stored 3.0 vs site 2.86; Cash & Equivalents 2021-12-31: stored 2.0 vs site 2.25 |
-| CNR | income_statement | 129 | Revenue 2022-12-31: stored 2102.0 vs site 2296.0; Revenue 2020-12-31: stored 1022.0 vs site 901.82; Revenue 2019-12-31: stored 1431.0 vs site 1410.0; Revenue 2017-12-31: stored 1412.0 vs site 1366.0 |
-| TLV:LUMI | cash_flow | 128 | Net Income 2025-12-31: stored 3448.0 vs site 3393.0; Net Income 2024-12-31: stored 3292.0 vs site 3240.0; Net Income 2023-12-31: stored 2361.0 vs site 2323.0; Net Income 2022-12-31: stored 2590.0 vs site 2549.0 |
-| QLYS | balance_sheet | 128 | Cash Growth 2024-12-31: stored -10.69 vs site -10.37; Cash Growth 2023-12-31: stored 32.9 vs site 32.44; Other Current Assets 2025-12-31: stored 41.0 vs site 8.71; Other Current Assets 2024-12-31: stored 40.0 vs site 7.29 |
-| TLV:BVGG | income_statement | 127 | Revenue 2025-12-31: stored 37.0 vs site 36.25; Revenue 2024-12-31: stored 48.0 vs site 45.1; Revenue 2023-12-31: stored 44.0 vs site 42.43; Revenue 2022-12-31: stored 91.0 vs site 89.89 |
-| TLV:BRND | income_statement | 127 | Revenue 2025-12-31: stored 290.0 vs site 285.25; Revenue 2024-12-31: stored 120.0 vs site 118.0; Revenue 2023-12-31: stored 98.0 vs site 96.33; Revenue 2022-12-31: stored 96.0 vs site 94.17 |
-| TLV:ISTA | cash_flow | 127 | Net Income 2025-12-31: stored 63.0 vs site 62.12; Net Income 2024-12-31: stored 33.0 vs site 32.16; Net Income 2023-12-31: stored 43.0 vs site 42.06; Net Income 2022-12-31: stored 72.0 vs site 70.96 |
+| TLV:OPCE | balance_sheet | 192 | Cash & Equivalents 2025: 2913 vs 913.74; Cash & Equivalents 2024: 962 vs 264.12; Cash & Equivalents 2023: 1007 vs 279.62 |
+| JOYY | balance_sheet | 163 | Cash & Equivalents 2025: 396 vs 374.25; Cash & Equivalents 2024: 816 vs 444.76; Cash & Equivalents 2023: 1383 vs 1064 |
+| TLV:OPCE | income_statement | 159 | Revenue 2025: 3002 vs 941.66; Revenue 2024: 2779 vs 762.98; Revenue 2023: 2552 vs 708.63 |
+| EC | income_statement | 146 | Revenue Growth 2019: 5.41 vs 4.21; Revenue Growth 2018: 21.21 vs 24.26; Revenue Growth 2017: 15.4 vs 13.87 |
+| TLV:OPCE | cash_flow | 133 | Net Income 2025: 346 vs 108.53; Net Income 2024: 111 vs 30.48; Net Income 2023: 144 vs 39.99 |
+| TLV:ISRA | income_statement | 132 | Revenue 2025: 446 vs 412.47; Revenue 2024: 533 vs 430.41; Revenue 2022: 519 vs 414.2 |
+| HHH | income_statement | 132 | Gross Profit 2025: 642 vs 703.33; Gross Profit 2024: 731 vs 790.35; Gross Profit 2023: 455 vs 507.83 |
+| EC | balance_sheet | 127 | Accounts Receivable 2025: 4689 vs 4123; Accounts Receivable 2024: 6436 vs 5963; Accounts Receivable 2023: 10496 vs 9868 |
+| TXNM | balance_sheet | 123 | Cash & Equivalents 2024: 4 vs 4.5; Cash & Equivalents 2023: 2 vs 2.22; Cash & Equivalents 2022: 32 vs 4.08 |
+| TLV:INCR | income_statement | 122 | Cost of Revenue 2025: 80 vs 75.44; Cost of Revenue 2024: 70 vs 64.69; Cost of Revenue 2022: 78 vs 71.23 |
+| INDV | income_statement | 121 | Cost of Revenue 2025: 246 vs 198; Cost of Revenue 2024: 231 vs 190; Cost of Revenue 2021: -127 vs 127 |
+| NMM | income_statement | 121 | Cost of Revenue 2025: 512 vs 127.76; Cost of Revenue 2024: 509 vs 146.43; Cost of Revenue 2023: 561 vs 160.23 |
+| ENOV | income_statement | 119 | Cost of Revenue 2024: 927 vs 857.21; Gross Profit 2024: 1181 vs 1250; Selling, General & Admin 2025: 1070 vs 999.95 |
+| PSNY | balance_sheet | 114 | Accounts Receivable 2024: 190 vs 233.09; Other Receivables 2024: 43 vs 188.56; Other Receivables 2023: 153 vs 327.18 |
+| STC | balance_sheet | 110 | Other Investments 2025: 5 vs 47.9; Other Investments 2024: 5 vs 41.2; Other Investments 2023: 4 vs 39.02 |
+| HR | balance_sheet | 109 | Cash & Equivalents 2020: 115 vs 15.3; Cash & Equivalents 2019: 33 vs 0.66; Cash & Equivalents 2018: 126 vs 8.38 |
+| INDV | balance_sheet | 104 | Accounts Receivable 2018: 287 vs 269; Accounts Receivable 2017: 278 vs 257; Accounts Receivable 2016: 227 vs 205 |
+| GHM | cash_flow | 104 | Net Income 2024: 5 vs 4.56; Net Income 2023: 0 vs 0.37; Net Income 2021: 2 vs 2.37 |
+| TLV:ASHO | income_statement | 104 | Selling, General & Admin 2025: 2 vs 9.73; Selling, General & Admin 2024: 3 vs 9.78; Selling, General & Admin 2023: 2 vs 7.81 |
+| MARA | income_statement | 104 | Revenue 2020: 4 vs 4.36; Revenue 2019: 1 vs 1.19; Revenue 2018: 2 vs 1.56 |
+| M | balance_sheet | 103 | Other Current Assets 2026: 387 vs 123; Other Current Assets 2025: 385 vs 115; Other Current Assets 2024: 401 vs 125 |
+| CCJ | income_statement | 101 | Cost of Revenue 2019: 967 vs 855.38; Cost of Revenue 2018: 1055 vs 901.18; Gross Profit 2021: 138 vs 167.04 |
+| CNR | income_statement | 100 | Revenue 2022: 2102 vs 2296; Revenue 2020: 1022 vs 901.82; Cost of Revenue 2022: 949 vs 1132 |
+| NBIS | balance_sheet | 99 | Cash Growth 2025: 51.07 vs 54.15; Cash Growth 2022: -21.02 vs -19.82; Cash Growth 2017: 11.65 vs 10.92 |
+| PRSU | balance_sheet | 98 | Cash & Equivalents 2023: 53 vs 27.44; Cash Growth 2024: -5.7 vs 81.16; Cash Growth 2023: -11.75 vs -54.06 |
+| XPEV | balance_sheet | 97 | Cash & Equivalents 2025: 4268 vs 2578; Cash & Equivalents 2024: 4685 vs 2765; Cash & Equivalents 2023: 4590 vs 3143 |
+| TLV:AVRT | income_statement | 97 | Gross Profit 2022: 9 vs 8.33; Gross Profit 2019: 7 vs 6.36; Gross Profit 2016: 10 vs 9.43 |
+| TLV:MPP | income_statement | 94 | Revenue 2019: 0 vs 0.38; Revenue 2018: 0 vs 0.16; Revenue Growth 2024: 15.66 vs 18.09 |
+| TLV:AVRT | cash_flow | 94 | Net Income 2024: 1 vs 0.9; Net Income 2023: 1 vs 0.49; Net Income 2022: -1 vs -1.44 |
+| HR | cash_flow | 93 | Net Income 2019: 31 vs 39.19; Net Income 2018: 218 vs 69.77; Net Income 2017: 66 vs 23.09 |
+| GNRC | balance_sheet | 93 | Other Current Assets 2020: 36 vs 1.39; Other Current Assets 2019: 31 vs 0.04; Other Current Assets 2017: 20 vs 0.27 |
+| VLO | income_statement | 93 | Revenue 2025: 122687 vs 115939; Revenue 2020: 64912 vs 60115; Revenue 2019: 108324 vs 102729 |
+| HHH | cash_flow | 93 | Net Income 2025: 264 vs 123.9; Net Income 2024: 394 vs 197.7; Net Income 2023: -1101 vs -551.77 |
+| TLV:OPAL | cash_flow | 92 | Net Income 2025: 14 vs 13.28; Net Income 2018: 8 vs 7.47; Net Income 2016: 5 vs 4.58 |
+| ECVT | income_statement | 92 | Gross Profit 2016: 254 vs 283.18; Other Operating Expenses 2025: 27 vs 17.07; Other Operating Expenses 2024: 13 vs 10.34 |
+| HR | income_statement | 91 | Property Expenses 2019: 211 vs 181.75; Property Expenses 2018: 221 vs 171.24; Property Expenses 2017: 192 vs 159.43 |
+| GRMN | balance_sheet | 91 | Other Current Assets 2025: 485 vs 17.54; Other Current Assets 2024: 378 vs 24.04; Other Current Assets 2023: 335 vs 16.32 |
+| PRSU | income_statement | 90 | Cost of Revenue 2025: 261 vs 34.62; Cost of Revenue 2024: 245 vs 31.12; Cost of Revenue 2023: 221 vs 31.9 |
+| HURN | balance_sheet | 89 | Cash Growth 2025: 11.85 vs 5.59; Cash Growth 2024: 80.35 vs 25.03; Cash Growth 2023: 2.66 vs -0.73 |
+| VLO | cash_flow | 89 | Net Income 2024: 3006 vs 2770; Net Income 2021: 1288 vs 930; Net Income 2020: -1107 vs -1421 |
+| MARA | balance_sheet | 88 | Cash & Equivalents 2022: 113 vs 103.71; Cash & Equivalents 2019: 1 vs 0.69; Cash & Equivalents 2018: 3 vs 2.55 |
+| HHH | balance_sheet | 88 | Cash & Equivalents 2025: 571 vs 1469; Cash Growth 2025: -4.22 vs 143.18; Cash Growth 2023: 0.49 vs 2.14 |
+| GHM | balance_sheet | 87 | Cash & Equivalents 2026: 7 vs 6.58; Accounts Receivable 2026: 34 vs 93.68; Accounts Receivable 2025: 36 vs 74 |
+| AU | income_statement | 87 | Revenue Growth 2016: 1.17 vs 5.18; Other Operating Expenses 2025: 336 vs 221; Other Operating Expenses 2024: 86 vs 158 |
+| HURN | income_statement | 87 | Revenue 2019: 965 vs 876.76; Revenue 2018: 878 vs 795.13; Revenue 2017: 808 vs 732.57 |
+| CPRT | balance_sheet | 86 | Accounts Receivable 2025: 763 vs 188.02; Accounts Receivable 2024: 786 vs 161.12; Accounts Receivable 2023: 702 vs 148.44 |
+| ARMK | balance_sheet | 86 | Cash Growth 2025: -4.96 vs -10.59; Cash Growth 2023: 484.94 vs 399.88; Cash Growth 2022: -38.14 vs -23.46 |
+| TLV:VRDS | income_statement | 86 | Gross Profit 2025: 97 vs 109.49; Gross Profit 2023: 87 vs 92.67; Selling, General & Admin 2025: 32 vs 71.57 |
+| TLV:KEN | income_statement | 86 | Revenue 2016: 1874 vs 324.25; Revenue Growth 2018: -0.54 vs -0.46; Revenue Growth 2017: -80.47 vs 12.78 |
+| BRKR | balance_sheet | 85 | Cash Growth 2025: 62.92 vs 53.94; Cash Growth 2022: -39.57 vs -43.79; Cash Growth 2020: 0.52 vs 6.39 |
+| FELE | balance_sheet | 84 | Other Long-Term Assets 2025: 16 vs 9.33; Other Long-Term Assets 2024: 19 vs 10.53; Other Long-Term Assets 2023: 15 vs 6.39 |
+| SNDX | balance_sheet | 84 | Accounts Receivable 2024: 8 vs 7.6; Other Receivables 2025: 30 vs 32.3; Other Receivables 2024: 4 vs 6.27 |
+| AU | balance_sheet | 84 | Accounts Receivable 2025: 426 vs 122; Accounts Receivable 2024: 356 vs 47; Accounts Receivable 2023: 193 vs 25 |
+| TLV:ASHO | cash_flow | 84 | Net Income 2024: 9 vs 16; Net Income 2023: 4 vs 10.71; Net Income 2022: 6 vs 5.49 |
+| CWT | income_statement | 84 | Other Operating Expenses 2025: 11 vs 50.28; Other Operating Expenses 2024: 36 vs 46.49; Other Operating Expenses 2023: -15 vs 35.08 |
+| RYAN | income_statement | 84 | Cost of Revenue 2024: 1591 vs 1479; Cost of Revenue 2023: 1321 vs 1253; Gross Profit 2024: 925 vs 976.96 |
+| AXP | balance_sheet | 83 | Long-Term Investments 2025: 1043 vs 2825; Long-Term Investments 2024: 1240 vs 2808; Long-Term Investments 2023: 2186 vs 3555 |
+| VLO | balance_sheet | 82 | Accounts Receivable 2025: 9877 vs 9207; Accounts Receivable 2024: 10708 vs 9731; Accounts Receivable 2023: 12525 vs 11038 |
+| MYE | cash_flow | 81 | Net Income 2019: 49 vs 24.33; Net Income 2018: -7 vs -3.35; Net Income 2017: -20 vs -9.89 |
+| TLV:HOD | balance_sheet | 81 | Cash & Equivalents 2025: 3 vs 2.73; Cash & Equivalents 2023: 5 vs 4.48; Cash & Equivalents 2020: 5 vs 4.54 |
+
+## Why the three financial statements disagree (ratios do not)
+
+The app stores the site's **CSV download** for income statement, balance sheet and cash flow, but the site's **rendered page** is a different dataset. The ratios statement already uses the page (overlay) and agrees at 99.3%. Differences found in the sample, by cause:
+
+1. **Row definitions** — the page breaks out sub-rows the download lumps together (GRMN Other Current Assets: 485 download vs 17.5 page + a separate Prepaid Expenses row); the page's Total Debt includes leases, the download's does not (GRMN 196 vs 165). Largest source; mostly rows the app does not use.
+2. **Foreign filers** — the page converts each year at that year's exchange rate, the download uses one rate (EC, JOYY, XPEV). Israeli (TLV) stocks are stored in shekels while the page shows dollars, so every cell differs by the exchange rate.
+3. **Different versions of the same year** — the page and the download carry different figures for recent years (VLO SG&A 2023: 998 vs 898; Revenue 2025: 122,687 vs 115,939).
+4. **Rounding** — the download rounds to whole millions (TXNM cash 4 vs 4.5).
+5. **Download errors** — HHH cash-flow Net Income is exactly double the page for every year; TXNM's 2022 column holds its subsidiary's balance sheet (Total Assets 2,747 vs 9,257).
+
+Fix that removes 1, 3, 4 and 5: overlay the page onto the three statements, as already done for ratios (ADR share basis kept by the existing guard).
